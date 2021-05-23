@@ -1,0 +1,125 @@
+
+<! This little bit of code started with https://www.wikihow.com/Create-a-Questionnaire-in-HTML and got modified, by then using info from w3schools.com to continue.
+
+This is an UGLY survey....  PLEASE MODIFY IT!
+
+Caroline Barrière
+May 2020
+
+>
+
+<! UPDATE: This file was modified by Wenglei Wu on May 23, 2021.>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	  <! IMPORTANT to use a CSS file - external >
+	  <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Questionnaire</title>
+  </head>
+
+  <body>
+	  <h1>Air Canada Website Customer Survey</h1>
+	  <form id="myform" action="index.php" >
+	    <br>
+	    <br>
+      <! Choose a website to evaluate >
+      <h2>What do you think of the UI of <a href="https://www.aircanada.com">Air Canada</a> website?</h2>
+      <br>
+      <br>
+      <! You should make your image clickable>
+      <a href="https://www.aircanada.com"><img src="images/AirCanada-FrontPage.png" alt="https://www.aircanada.com" width="450" height="300"></a>
+      <br>
+      <br>
+      <div class="question">
+        <h2> Personal Information</h2>
+        <p>We can call you:<br> <input type="text" name="nickname" placeholder="enter you nickname"></p>
+        <p>Your e-mail:<br> <input type="email" name="email" placeholder="name@domain.com"></p><br>
+        <h4> Enter you Aeroplan number to receive 100 reward points. </h4>
+        <p>Aeroplan number:<br> <input type="text" name="AeroplanNumber"></p>
+      </div>
+      <br>
+      <br>
+
+	    <div class="question">
+        <h2> Agreements and Rating </h2>
+        You find it easy and convenient to use our website.<br>
+        <input type="radio" name="Easy" value="Strongly Agree">Strongly Agree<br>
+        <input type="radio" name="Easy" value="Agree">Agree<br>
+        <input type="radio" name="Easy" value="Somewhat Agree">Somewhat Agree<br>
+        <input type="radio" name="Easy" value="Disagree">Disagree<br>
+        <input type="radio" name="Easy" value="Strongly Disagree">Strongly Disagree<br>
+        <br>
+
+        Our website is more appealing than any other airline companies' websites.<br>
+        <input type="radio" name="Appealing" value="Strongly Agree">Strongly Agree<br>
+        <input type="radio" name="Appealing" value="Agree">Agree<br>
+        <input type="radio" name="Appealing" value="Somewhat Agree">Somewhat Agree<br>
+        <input type="radio" name="Appealing" value="Disagree">Disagree<br>
+        <input type="radio" name="Appealing" value="Strongly Disagree">Strongly Disagree<br>
+        <br>
+
+        Our website has no major flaw.<br>
+        <input type="radio" name="Flaw" value="Strongly Agree">Strongly Agree<br>
+        <input type="radio" name="Flaw" value="Agree">Agree<br>
+        <input type="radio" name="Flaw" value="Somewhat Agree">Somewhat Agree<br>
+        <input type="radio" name="Flaw" value="Disagree">Disagree<br>
+        <input type="radio" name="Flaw" value="Strongly Disagree">Strongly Disagree<br>
+        <br>
+
+        Overall, you would rate our website: <br>
+        <select id="rate">
+			    <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10" selected="selected">10</option>
+		    </select>
+
+      </div>
+      <br>
+      <br>
+
+      <div class="question">
+        <h2> Possible Improvements </h2>
+        Please indicate which ones of the following functionalities on our website need improvements.<br>
+        <input type="checkbox" name="Improvement" value="Searching flights">Searching flights<br>
+        <input type="checkbox" name="Improvement" value="Booking flights">Booking flights<br>
+        <input type="checkbox" name="Improvement" value="Aeroplan">Aeroplan<br>
+        <input type="checkbox" name="Improvement" value="Customer support">Customer support<br>
+        <input type="checkbox" name="Improvement" value="Check-in">Check-in<br>
+        <input type="checkbox" name="Improvement" value="News">News<br>
+        <input type="checkbox" name="Improvement" value="FAQ">FAQ<br>
+        <input type="checkbox" name="Improvement" value="Others">Others<br>
+        <br>
+        Please specify your complaints:<br>
+        <textarea name="complaints" rows="8" cols="50" placeholder="Enter your complaints here."></textarea>
+
+      </div>
+      <br>
+      <br>
+
+      <div class="question">
+        <h2>Additional Comments</h2>
+        If you have any additional suggestions or comments, please type them in the text box below.<br>
+        <textarea name="comments" rows="8" cols="50" placeholder="Enter your comments here."></textarea>
+      </div>
+
+	    <br>
+	    <br>
+
+    	<button id="submitButton" type="button" class="block">
+	    	SUBMIT
+	    </button>
+
+	    <p id="signature">Website designed by Stone Wu</p>
+
+	  </form>
+  </body>
+</html>
