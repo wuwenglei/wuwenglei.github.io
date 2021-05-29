@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>Sunshine Grocery</title>
 </head>
 
 <body>
+<div id="StoreName">
+	<h1>Sunshine Grocery</h1>
+</div>
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
@@ -21,10 +26,15 @@
 	Choose a Category:
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
+	<option value="LactoseFree">LactoseFree</option>
+    <option value="NutFree">NutFree</option>
     <option value="None">None</option>
 	</select>
+	<br>
+	<br>
+	Prefer organic food:
+	<label><input type="radio" name="organicRadio" value="Yes" onchange="setOrganicTrue(); populateListProductChoices('dietSelect', 'displayProduct')">Yes</label>
+	<label><input type="radio" name="organicRadio" value="No" checked="checked" onchange="setOrganicFalse(); populateListProductChoices('dietSelect', 'displayProduct')">No</label>
 </div>
 
 <div id="Products" class="tabcontent">

@@ -1,28 +1,94 @@
-	
+
 // Array of products, each product is an object with different fieldset
-// A set of ingredients should be added to products		 
+// A set of ingredients should be added to products
 
 var products = [
 	{
+		name: "banana",
+		lactoseFree: true,
+		nutFree: true,
+		organic: true,
+		price: 1.50
+	},
+	{
 		name: "brocoli",
-		vegetarian: true,
-		glutenFree: true,
+		lactoseFree: true,
+		nutFree: true,
+		organic: true,
 		price: 1.99
 	},
 	{
-		name: "bread",
-		vegetarian: true,
-		glutenFree: false,
-		price: 2.35
+		name: "pure chocolate",
+		lactoseFree: true,
+		nutFree: true,
+		organic: false,
+		price: 2.20
+	},
+	{
+		name: "hickory milk",
+		lactoseFree: false,
+		nutFree: false,
+		organic: false,
+		price: 2.59
+	},
+	{
+		name: "yogurt",
+		lactoseFree: false,
+		nutFree: true,
+		organic: true,
+		price: 2.99
+	},
+	{
+		name: "ice-cream",
+		lactoseFree: false,
+		nutFree: true,
+		organic: false,
+		price: 4.00
+	},
+	{
+		name: "roast chicken",
+		lactoseFree: true,
+		nutFree: true,
+		organic: true,
+		price: 4.99
+	},
+	{
+		name: "milk tea",
+		lactoseFree: false,
+		nutFree: true,
+		organic: false,
+		price: 5.00
+	},
+	{
+		name: "pesto sauce",
+		lactoseFree: true,
+		nutFree: false,
+		organic: false,
+		price: 6.00
+	},
+	{
+		name: "peanut butter",
+		lactoseFree: true,
+		nutFree: false,
+		organic: false,
+		price: 6.50
+	},
+	{
+		name: "almond granola",
+		lactoseFree: true,
+		nutFree: false,
+		organic: false,
+		price: 7.35
 	},
 	{
 		name: "salmon",
-		vegetarian: false,
-		glutenFree: true,
+		lactoseFree: true,
+		nutFree: true,
+		organic: true,
 		price: 10.00
 	}
 ];
-	
+
 
 
 // given restrictions provided, make a reduced list of products
@@ -31,14 +97,26 @@ var products = [
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
-		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
+		if (organic == true) {
+			if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true) && (prods[i].organic == true)){
+				product_names.push(prods[i].name);
+			}
+			else if ((restriction == "NutFree") && (prods[i].nutFree == true) && (prods[i].organic == true)){
+				product_names.push(prods[i].name);
+			}
+			else if ((restriction == "None") && (prods[i].organic == true)){
+				product_names.push(prods[i].name);
+			}
+		} else {
+			if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true)){
+				product_names.push(prods[i].name);
+			}
+			else if ((restriction == "NutFree") && (prods[i].nutFree == true)){
+				product_names.push(prods[i].name);
+			}
+			else if (restriction == "None"){
+				product_names.push(prods[i].name);
+			}
 		}
 	}
 	return product_names;
