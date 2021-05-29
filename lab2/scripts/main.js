@@ -1,4 +1,6 @@
+// Modified by Wenglei Wu on May 29, 2021
 
+// Boolean value indicating user preference of organic food
 var organic = false;
 
 // This function is called when any of the tab is clicked
@@ -24,8 +26,6 @@ function openInfo(evt, tabName) {
 
 }
 
-
-
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -37,7 +37,9 @@ function populateListProductChoices(slct1, slct2) {
     s2.innerHTML = "";
 
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value);
+	  var completeArray = restrictListProducts(products, s1.value);
+    var optionArray = completeArray[0];
+		var priceArray = completeArray[1];
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
@@ -46,17 +48,19 @@ function populateListProductChoices(slct1, slct2) {
 	for (i = 0; i < optionArray.length; i++) {
 
 		var productName = optionArray[i];
+		var productPrice = priceArray[i];
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
+		checkbox.style = "height: 25px; width=25px; position: relative; bottom: -0.5em;";
 		s2.appendChild(checkbox);
 
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label');
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.appendChild(document.createTextNode(productName+"  $"+productPrice));
 		s2.appendChild(label);
 
 		// create a breakline node and add in HTML DOM
@@ -90,14 +94,16 @@ function selectedItems(){
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 
 }
 
+// Set the boolean value organic to true
 function setOrganicTrue() {
 	organic = true;
 }
 
+// Set the boolean value organic to true
 function setOrganicFalse() {
 	organic = false;
 }

@@ -1,3 +1,4 @@
+// Modified by Wenglei Wu on May 29, 2021
 
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products
@@ -96,30 +97,52 @@ var products = [
 
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
+	let product_prices = [];
+	let product_infos = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if (organic == true) {
 			if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true) && (prods[i].organic == true)){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 			else if ((restriction == "NutFree") && (prods[i].nutFree == true) && (prods[i].organic == true)){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 			else if ((restriction == "None") && (prods[i].organic == true)){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 		} else {
 			if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true)){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 			else if ((restriction == "NutFree") && (prods[i].nutFree == true)){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 			else if (restriction == "None"){
 				product_names.push(prods[i].name);
+				product_prices.push(prods[i].price);
 			}
 		}
 	}
-	return product_names;
+	for (let i=0; i<product_prices.length-1; i++) {
+		for (let j=product_prices.length-1; j>i; j--) {
+			if (product_prices[j]<product_prices[j-1]) {
+				var tmp_price=product_prices[j];
+				product_prices[j]=product_prices[j-1];
+				product_prices[j-1]=tmp_price;
+				var tmp_name=product_names[j];
+				product_names[j]=product_names[j-1];
+				product_names[j-1]=tmp_name;
+			}
+		}
+	}
+	product_infos.push(product_names);
+	product_infos.push(product_prices);
+	return product_infos;
 }
 
 // Calculate the total price of items, with received parameter being a list of products
@@ -130,5 +153,5 @@ function getTotalPrice(chosenProducts) {
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice;
+	return Number(totalPrice).toFixed(2);
 }

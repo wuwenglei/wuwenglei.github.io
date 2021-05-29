@@ -1,17 +1,20 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+/* Modified by Wenglei Wu on May 29, 2021 */
 
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 2px solid #ccc;
+  background-color: rgba(241,241,241,0.2);
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
   float: left;
-  border: none;
+  border-width: 0.5px;
+  border-color: white;
+  border-radius: 20%;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
@@ -32,6 +35,70 @@
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-top: none;
+}
+
+/* Style the store name */
+#StoreName {
+  background-color: transparent;
+  color: hsl(32, 80%, 55%);
+  text-align: center;
+  text-shadow: -4px 4px 6px hsl(180, 50%, 55%);
+}
+
+/* Style the page */
+body{
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Style the signature */
+#signature {
+  position: absolute;
+  bottom: 1px;
+  right: 20px;
+  color: green;
+  font-style: italic;
+  font-size: 75%;
+}
+
+/* Style the selection input */
+select {
+  width: 8%;
+  height: 30px;
+  padding: 5px 7px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+/* Style the add to cart button */
+.block {
+  display: block;
+  width: 10%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5);
+  color: rgba(0,0,0,0.8);
+  padding: 7px 14px;
+  font-size: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Enlarge the radio input circles */
+.Radio {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: -0.3ex
+}
+
+/* Give color to the h3 headings */
+h3 {
+  color: rgba(10,160,80,0.9);
 }
