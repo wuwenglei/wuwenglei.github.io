@@ -4,102 +4,103 @@
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products
 
+
 var products = [
 	{
-		name: "banana",
+		name: "banane",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 1.50,
-		description: "One single American organic banana. Moderately sweet."
+		description: "Eine einzige amerikanische Bio-Banane. Mäßig süß."
 	},
 	{
-		name: "brocoli",
+		name: "brokoli",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 1.99,
-		description: "One single Canadian organic brocoli. Very delicious."
+		description: "Ein einziger kanadischer Bio-Brocoli. Sehr lecker."
 	},
 	{
-		name: "pure chocolate",
+		name: "reine Schokolade",
 		lactoseFree: true,
 		nutFree: true,
 		organic: false,
 		price: 2.20,
-		description: "Pure chocolate from New Zealand with no lactose and nut."
+		description: "Pure Schokolade aus Neuseeland ohne Laktose und Nuss."
 	},
 	{
-		name: "hickory milk",
+		name: "hickorymilch",
 		lactoseFree: false,
 		nutFree: false,
 		organic: false,
 		price: 2.59,
-		description: "Chinese hickory milk, which is good for brain health."
+		description: "Chinesische Hickory-Milch, die gut für die Gesundheit des Gehirns ist."
 	},
 	{
-		name: "yogurt",
+		name: "joghurt",
 		lactoseFree: false,
 		nutFree: true,
 		organic: true,
 		price: 2.99,
-		description: "Ottawa product. Organic and healthy."
+		description: "Ottawa-Produkt. Bio und gesund."
 	},
 	{
-		name: "ice-cream",
+		name: "eis",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 4.00,
-		description: "Haagen-Dazs. Flavors available: strawberry, blueberry, vanilla, chocolate, coffee, matcha."
+		description: "Haagen-Dazs. Verfügbare Geschmacksrichtungen: Erdbeere, Heidelbeere, Vanille, Schokolade, Kaffee, Matcha."
 	},
 	{
-		name: "roast chicken",
+		name: "brathähnchen",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 4.99,
-		description: "A whole chicken. Organic. Cooked by our founder Stone Wu. Extremely tasty!"
+		description: "Ein ganzes Huhn. Bio. Gekocht von unserem Gründer Stone Wu. Extrem lecker!"
 	},
 	{
-		name: "milk tea",
+		name: "milchtee",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 5.00,
-		description: "One bottle of milk tea produced by our grocery."
+		description: "Eine Flasche Milchtee aus unserem Lebensmittelgeschäft."
 	},
 	{
-		name: "pesto sauce",
+		name: "pesto-sauce",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.00,
-		description: "Imported from Italy."
+		description: "Importiert aus Italien."
 	},
 	{
-		name: "peanut butter",
+		name: "erdnussbutter",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.50,
-		description: "Imported from USA."
+		description: "Importiert aus den USA."
 	},
 	{
-		name: "almond granola",
+		name: "mandel-granola",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 7.35,
-		description: "Canadian product. Sufficient for at least 10 meals."
+		description: "Kanadisches Produkt. Ausreichend für mindestens 10 Mahlzeiten."
 	},
 	{
-		name: "salmon",
+		name: "lachs",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 10.00,
-		description: "Fresh Japanese organic salmon. High protein."
+		description: "Frischer japanischer Bio-Lachs. Hoher Proteingehalt."
 	}
 ];
 

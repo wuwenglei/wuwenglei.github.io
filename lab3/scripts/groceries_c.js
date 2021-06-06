@@ -6,100 +6,100 @@
 
 var products = [
 	{
-		name: "banana",
+		name: "香蕉",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 1.50,
-		description: "One single American organic banana. Moderately sweet."
+		description: "一根美国有机香蕉，甜度适中。"
 	},
 	{
-		name: "brocoli",
+		name: "花椰菜",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 1.99,
-		description: "One single Canadian organic brocoli. Very delicious."
+		description: "一颗加拿大有机花椰菜，非常可口。"
 	},
 	{
-		name: "pure chocolate",
+		name: "纯巧克力",
 		lactoseFree: true,
 		nutFree: true,
 		organic: false,
 		price: 2.20,
-		description: "Pure chocolate from New Zealand with no lactose and nut."
+		description: "新西兰产纯巧克力，无乳糖无坚果。"
 	},
 	{
-		name: "hickory milk",
+		name: "山核桃奶",
 		lactoseFree: false,
 		nutFree: false,
 		organic: false,
 		price: 2.59,
-		description: "Chinese hickory milk, which is good for brain health."
+		description: "中国产的山核桃奶，对脑部健康有益。"
 	},
 	{
-		name: "yogurt",
+		name: "酸奶",
 		lactoseFree: false,
 		nutFree: true,
 		organic: true,
 		price: 2.99,
-		description: "Ottawa product. Organic and healthy."
+		description: "渥太华产品，有机且健康。"
 	},
 	{
-		name: "ice-cream",
+		name: "冰淇淋",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 4.00,
-		description: "Haagen-Dazs. Flavors available: strawberry, blueberry, vanilla, chocolate, coffee, matcha."
+		description: "哈根达斯。口味：草莓，蓝莓，香草，巧克力，咖啡，抹茶。"
 	},
 	{
-		name: "roast chicken",
+		name: "烤鸡",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 4.99,
-		description: "A whole chicken. Organic. Cooked by our founder Stone Wu. Extremely tasty!"
+		description: "一只全鸡。由我们的创始人吴先生烹饪。极度美味！"
 	},
 	{
-		name: "milk tea",
+		name: "奶茶",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 5.00,
-		description: "One bottle of milk tea produced by our grocery."
+		description: "我们食品杂货店生产的一杯奶茶。"
 	},
 	{
-		name: "pesto sauce",
+		name: "香蒜酱",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.00,
-		description: "Imported from Italy."
+		description: "意大利进口。"
 	},
 	{
-		name: "peanut butter",
+		name: "花生酱",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.50,
-		description: "Imported from USA."
+		description: "美国进口。"
 	},
 	{
-		name: "almond granola",
+		name: "杏仁麦片",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 7.35,
-		description: "Canadian product. Sufficient for at least 10 meals."
+		description: "加拿大产品。足够吃至少10顿。"
 	},
 	{
-		name: "salmon",
+		name: "三文鱼",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 10.00,
-		description: "Fresh Japanese organic salmon. High protein."
+		description: "新鲜日本有机三文鱼。高蛋白。"
 	}
 ];
 

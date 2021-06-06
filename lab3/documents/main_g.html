@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
+	<!-- Modified by Wenglei Wu on May 29, 2021 -->
+	<!-- Second modification by Wenglei Wu on June 5, 2021 -->
+	<link href="../styles/style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>Sonnenschein Lebensmittelgeschäft</title>
+</head>
+
+<body>
+<div id="StoreName">
+	<h1>Sonnenschein Lebensmittelgeschäft</h1>
+</div>
+
+<!-- !!! This part of code is taken from https://www.w3schools.com/howto/howto_css_subnav.asp and modified by Wenglei Wu on June 5, 2021 -->
+<!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The navigation menu -->
+<div class="navbar">
+<a href="../index.html">Startseite</a>
+<div class="subnav">
+	<button class="subnavbtn">Kundeninformation<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event,'Account')" style="color: orange;">Konto</a>
+		<a onclick="openInfo(event, 'Client')" style="color: rgba(0,0,200,0.5);">Warenpräferenzen</a>
+		<a onclick="openInfo(event, 'Delivery')" style="color: green;">Lieferdetails</a>
+	</div>
+</div>
+<div class="subnav">
+	<button class="subnavbtn">Einkaufen<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event, 'Products')" style="color: orange;">Rohstoffe</a>
+		<a onclick="openInfo(event, 'Cart')" style="color: rgba(0,0,200,0.5);">Einkaufswagen</a>
+		<a onclick="openInfo(event, 'Checkout')" style="color: green;">Auschecken</a>
+	</div>
+</div>
+<div class="subnav">
+	<button class="subnavbtn">Über<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event,'Company')" style="color: orange;">Unternehmen</a>
+		<a onclick="openInfo(event,'Contact')" style="color: rgba(0,0,200,0.5);">Kontakt</a>
+		<a onclick="openInfo(event,'Acknowledgements')" style="color: green;">Danksagung</a>
+	</div>
+</div>
+
+</div>
+<!-- !!! Code above is taken from https://www.w3schools.com/howto/howto_css_subnav.asp and modified by Wenglei Wu on June 5, 2021 -->
+
+
+
+<!-- Tab content -->
+<div id="Account" class="tabcontent">
+	<h3 style="color: orange;">Konto</h3>
+  <p><label>Geben Sie Ihre Konto-ID ein, um Prämienpunkte zu erhalten: <input type="text" name="accountID" placeholder="Geben Sie Ihre Konto-ID ein"></label></p>
+	<p><details>
+		<summary>Regeln für Prämienpunkte</summary>
+		<ul>
+			<li>Sie erhalten 1 Bonuspunkt für jeden Dollar, den Sie in unserem Lebensmittelgeschäft ausgeben.</li>
+			<li>Alle 100 Bonuspunkte im Wert von 1 Dollar in unserem Lebensmittelgeschäft. Der Rabatt kann beim auschecken angewendet werden.</li>
+			<li>Ihre Prämienpunkte sind ein Jahr lang gültig, nachdem sie Ihrem Konto hinzugefügt wurden.</li>
+			<li>Durch die Eingabe Ihrer Konto-ID erkennen Sie unsere Allgemeinen Geschäftsbedingungen an.</li>
+		</ul>
+	</details></p>
+</div>
+
+<div id="Client" class="tabcontent">
+  <h3 style="color: rgba(0,0,200,0.5);">Warenpräferenzen</h3>
+  <p>Falls Sie allergisch gegen Laktose oder Nuss sind, können Sie unten eine Kategorie auswählen, um die Lebensmittel zu filtern, die Sie nicht benötigen.</p>
+	Wähle eine Kategorie:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+		<option value="LactoseAndNutFree">Laktose- und nussfrei</option>
+	  <option value="LactoseFree">Laktosefrei</option>
+    <option value="NutFree">Nussfrei</option>
+    <option value="None" selected="selected">Keiner</option>
+	</select>
+	<br>
+	<br>
+	<p>Wenn Sie Bio-Lebensmittel bevorzugen, können Sie nicht-Bio-Lebensmittel filtern, indem Sie unten auf "Ja" klicken.</p>
+	Bevorzugen Sie Bio-Lebensmittel:
+	<label><input type="radio" name="organicRadio" value="Yes" class="Radio" onchange="setOrganicTrue(); populateListProductChoices('dietSelect', 'displayProduct')">Ja</label>
+	<label><input type="radio" name="organicRadio" value="No" checked="checked" class="Radio" onchange="setOrganicFalse(); populateListProductChoices('dietSelect', 'displayProduct')">Nein</label>
+  <br>
+</div>
+
+<div id="Delivery" class="tabcontent">
+	<h3 style="color: green;">Lieferdetails</h3>
+  <form id = "DeliveryForm">
+  	<div>
+			<p>Bitte geben Sie unten die Informationen zur Paketzustellung ein.</p>
+			<p><label>Name: <input type="text" name="Name"></label></p>
+			<p><label>Telefonnummer: <input type="text" name="PhoneNumber"></label></p>
+			<p><label>POSTLEITZAHL: <input type="text" name="ZIP"></label></p>
+			<p><label>Adresse: <input type="text" name="Address" size="50"></label></p>
+  	</div>
+
+		<div>
+			<p>Bitte geben Sie vor dem Versand an, ob Ihre Artikel als Geschenk verpackt werden sollen. Der Dienst ist kostenlos.</p>
+			<p>Als Geschenk verpackt?
+				<label><input type="radio" name="gift" value="Yes">Ja</label>
+				<label><input type="radio" name="gift" value="No" checked="checked">Nein</label>
+			</p>
+		</div>
+  </form>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3 style="color: orange;">Ihre Zielprodukte</h3>
+  <p>Wir haben Produkte basierend auf Ihren Einschränkungen vorselektiert.</p>
+	 Wählen Sie Artikel zum Kauf aus:
+	 <div id="displayProduct"></div><br>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Ausgewählte Artikel in den Warenkorb legen.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3 style="color: rgba(0,0,200,0.5);">Wagen</h3>
+  <p>Hier ist Ihr Warenkorb.</p>
+  <div id="displayCart"></div>
+	<br>
+	<p style="font-size: 75%;">Bitte klicken <span style="color: orange;">Rohstoffe</span> unter "Einkaufen" in der Navigationsleiste Artikel in den Warenkorb zu legen.</p>
+	<p style="font-size: 75%;">Bitte klicken <span style="color: green;">Auschecken</span> in der Navigationsleiste unter "Einkaufen" auf Kasse, um zur Kasse zu gehen.</p>
+</div>
+
+<div id="Checkout" class="tabcontent">
+  <div>
+		<h3 style="color: green;">Auschecken</h3>
+  	<p id="checkoutprice"></p>
+  </div>
+
+	<div>
+		<p style="font-size: 150%;">Rabatt</p>
+		<p>Belohnungspunkte verwenden?
+			<label><input type="radio" name="userewardpoints" value="Yes">Ja</label>
+			<label><input type="radio" name="userewardpoints" value="No" checked="checked">Nein</label>
+		</p>
+		<p><label>Gutscheincode: <input type="text" name="coupon"></label></p>
+	</div>
+
+	<div>
+		<p style="font-size: 150%;">Zahlungsinformationen</p>
+		<div>
+			<p>Rechnungsadresse</p>
+			<input type="text" name="streetaddress" placeholder="Adresse">
+			<input type="text" name="city" placeholder="Stadt">
+			<input type="text" name="state" placeholder="Bundesland/Provinz">
+			<input type="text" name="zipCode" placeholder="PLZ">
+			<input type="text" name="country" placeholder="Land">
+		</div>
+
+		<div>
+			<p>Kreditkarte</p>
+			<input type="text" name="cardholdername" placeholder="Name des Karteninhabers">
+			<input type="text" name="cardnumber" placeholder="Kartennummer">
+			<input type="text" name="cvv" placeholder="CVV">
+			<input type="month" name="validuntil">
+		</div>
+	</div>
+
+  <br>
+	<div>
+		<button id="submitButton" type="button" onclick="window.alert('Ihre Bestellung wurde erfolgreich abgeschickt! Bitte warten Sie 2-5 Tage, bis das Paket zugestellt wird.');">
+			BESTELLUNG ABSENDEN
+		</button>
+		<p>Hinweis: Wenn Sie auf BESTELLUNG ABSENDEN klicken, werden alle Ihre Eingaben in den Teilen Kundeninformationen und Einkaufen sofort an uns übermittelt.</p>
+	</div>
+</div>
+
+<div id="Company" class="tabcontent">
+	<h3 style="color: orange;">Unternehmen</h3>
+	<p>Sunshine Grocery wurde im Mai 2021 von Stone Wu gegründet. Unser Ziel ist es, unseren Kunden eine Vielzahl von günstigen und qualitativ hochwertigen Waren anzubieten.</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+	<h3 style="color: rgba(0,0,200,0.5);">Kontakt</h3>
+	<p>Bei Fragen zu unserem Unternehmen, den von Ihnen aufgegebenen Bestellungen oder der erhaltenen Ware können Sie sich gerne an uns wenden!</p>
+	<p>Email: admin@sunshinegrocery.com</p>
+	<p>Telefon: (613) 123-9876</p>
+</div>
+
+<div id="Acknowledgements" class="tabcontent">
+	<h3 style="color: green;">Danksagung</h3>
+	<p>Dank des Kursangebots SEG3125 der University of Ottawa haben wir die Möglichkeit, unser Online-Lebensmittelgeschäft zu entwickeln.</p>
+	<p>Der Startcode unserer Website wird von Professorin Caroline Barrière angeboten.</p>
+	<p>Der Code des Navigationsmenüs (Fly-out-Menü-Navigationsmuster) stammt von der <span><a href="https://www.w3schools.com/howto/howto_css_subnav.asp">W3 School-Website</a></span>. Wir haben es an unsere Website angepasst.</p>
+	<p>Wörter und Sätze in Französisch und Deutsch auf unserer Website wurden von Google Translate übersetzt.</p>
+</div>
+
+<footer><p id="signature">Website gestaltet von Stone Wu designed</p></footer>
+
+<script src="../scripts/groceries_g.js"></script>
+<script src="../scripts/main_g.js"></script>
+<script src="../scripts/language.js"></script>
+<script type="text/javascript">
+	populateListProductChoices("dietSelect", "displayProduct");
+</script>
+
+</body>
+</html>

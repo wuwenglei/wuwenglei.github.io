@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
+	<!-- Modified by Wenglei Wu on May 29, 2021 -->
+	<!-- Second modification by Wenglei Wu on June 5, 2021 -->
+	<link href="../styles/style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>阳光食品杂货店</title>
+</head>
+
+<body>
+<div id="StoreName">
+	<h1>阳光食品杂货店</h1>
+</div>
+
+<!-- !!! This part of code is taken from https://www.w3schools.com/howto/howto_css_subnav.asp and modified by Wenglei Wu on June 5, 2021 -->
+<!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The navigation menu -->
+<div class="navbar">
+<a href="../index.html">欢迎页</a>
+<div class="subnav">
+	<button class="subnavbtn">客户信息<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event,'Account')" style="color: orange;">账户</a>
+		<a onclick="openInfo(event, 'Client')" style="color: rgba(0,0,200,0.5);">商品偏好</a>
+		<a onclick="openInfo(event, 'Delivery')" style="color: green;">交货详细信息</a>
+	</div>
+</div>
+<div class="subnav">
+	<button class="subnavbtn">购物<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event, 'Products')" style="color: orange;">商品</a>
+		<a onclick="openInfo(event, 'Cart')" style="color: rgba(0,0,200,0.5);">购物车</a>
+		<a onclick="openInfo(event, 'Checkout')" style="color: green;">结算</a>
+	</div>
+</div>
+<div class="subnav">
+	<button class="subnavbtn">关于<i class="fa fa-caret-down"></i></button>
+	<div class="subnav-content">
+		<a onclick="openInfo(event,'Company')" style="color: orange;">本公司</a>
+		<a onclick="openInfo(event,'Contact')" style="color: rgba(0,0,200,0.5);">联系方式</a>
+		<a onclick="openInfo(event,'Acknowledgements')" style="color: green;">致谢</a>
+	</div>
+</div>
+
+</div>
+<!-- !!! Code above is taken from https://www.w3schools.com/howto/howto_css_subnav.asp and modified by Wenglei Wu on June 5, 2021 -->
+
+
+
+<!-- Tab content -->
+<div id="Account" class="tabcontent">
+	<h3 style="color: orange;">账户</h3>
+  <p><label>输入的用户ID以获取奖励积分：<input type="text" name="accountID" placeholder="请输入您的用户ID"></label></p>
+	<p><details>
+		<summary>积分规则</summary>
+		<ul>
+			<li>您在我们店每消费1加币可获取1积分</li>
+			<li>在我们店每100积分可抵扣1加币，您可在结算栏中应用此折扣。</li>
+			<li>入账之日起一年为奖励积分的有效期。</li>
+			<li>输入您的用户ID，则表明您知晓并认同我们的条款。</li>
+		</ul>
+	</details></p>
+</div>
+
+<div id="Client" class="tabcontent">
+  <h3 style="color: rgba(0,0,200,0.5);">商品偏好</h3>
+  <p>以防您对乳糖或坚果过敏，您可以在下方选择一个类别来过滤您不需要的食品。</p>
+	选择:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+		<option value="LactoseAndNutFree">无乳糖和坚果</option>
+	  <option value="LactoseFree">无乳糖</option>
+    <option value="NutFree">无坚果</option>
+    <option value="None" selected="selected">默认</option>
+	</select>
+	<br>
+	<br>
+	<p>如果您偏好有机食品，您可以选择下方的“是”来过滤非有机食品。</p>
+	偏好有机食品：
+	<label><input type="radio" name="organicRadio" value="Yes" class="Radio" onchange="setOrganicTrue(); populateListProductChoices('dietSelect', 'displayProduct')">是</label>
+	<label><input type="radio" name="organicRadio" value="No" checked="checked" class="Radio" onchange="setOrganicFalse(); populateListProductChoices('dietSelect', 'displayProduct')">否</label>
+  <br>
+</div>
+
+<div id="Delivery" class="tabcontent">
+	<h3 style="color: green;">交货详细信息</h3>
+  <form id = "DeliveryForm">
+  	<div>
+			<p>请在下方输入您的收货信息。</p>
+			<p><label>姓名: <input type="text" name="Name"></label></p>
+			<p><label>电话: <input type="text" name="PhoneNumber"></label></p>
+			<p><label>邮编: <input type="text" name="ZIP"></label></p>
+			<p><label>地址: <input type="text" name="Address" size="50"></label></p>
+  	</div>
+
+		<div>
+			<p>请选择是否需要将您的商品包装成礼物，这项服务是免费的。</p>
+			<p>需要包装成礼物吗？
+				<label><input type="radio" name="gift" value="Yes">是</label>
+				<label><input type="radio" name="gift" value="No" checked="checked">否</label>
+			</p>
+		</div>
+  </form>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3 style="color: orange;">您的目标产品</h3>
+  <p>我们根据您的限制预先筛选了产品。</p>
+	 选择您需要购买的物品:
+	 <div id="displayProduct"></div><br>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		将选择的物品加入购物车。
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3 style="color: rgba(0,0,200,0.5);">购物车</h3>
+  <p>这是您的购物车。</p>
+  <div id="displayCart"></div>
+	<br>
+	<p style="font-size: 75%;">请点击导航栏“购物”栏下的<span style="color: orange;">商品</span>来选择您需要的商品。</p>
+	<p style="font-size: 75%;">请点击导航栏“购物”栏下的<span style="color: green;">结算</span>以结账付款。</p>
+</div>
+
+<div id="Checkout" class="tabcontent">
+  <div>
+		<h3 style="color: green;">结算</h3>
+  	<p id="checkoutprice"></p>
+  </div>
+
+	<div>
+		<p style="font-size: 150%;">折扣</p>
+		<p>您要使用奖励积分吗？
+			<label><input type="radio" name="userewardpoints" value="Yes">是</label>
+			<label><input type="radio" name="userewardpoints" value="No" checked="checked">否</label>
+		</p>
+		<p><label>优惠券码: <input type="text" name="coupon"></label></p>
+	</div>
+
+	<div>
+		<p style="font-size: 150%;">支付信息</p>
+		<div>
+			<p>账单地址</p>
+			<input type="text" name="streetaddress" placeholder="街道地址">
+			<input type="text" name="city" placeholder="城市">
+			<input type="text" name="state" placeholder="州/省">
+			<input type="text" name="zipCode" placeholder="邮编">
+			<input type="text" name="country" placeholder="国家">
+		</div>
+
+		<div>
+			<p>Credit Card</p>
+			<input type="text" name="cardholdername" placeholder="持卡人姓名">
+			<input type="text" name="cardnumber" placeholder="卡号">
+			<input type="text" name="cvv" placeholder="CVV">
+			<input type="month" name="validuntil">
+		</div>
+	</div>
+
+  <br>
+	<div>
+		<button id="submitButton" type="button" onclick="window.alert('您的订单已成功提交！物流可能需耗时2-5天，请耐心等待！');">
+			提交订单
+		</button>
+		<p>注释：点击“提交订单”，您在本网页输入的所有信息（客户信息栏和客户栏）将会立即提交给我们。</p>
+	</div>
+</div>
+
+<div id="Company" class="tabcontent">
+	<h3 style="color: orange;">Company</h3>
+	<p>阳光食品杂货店由吴先生于2021年5月创建。我们的目标是为我们的顾客提供各种各样物美价廉的商品。</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+	<h3 style="color: rgba(0,0,200,0.5);">联系方式</h3>
+	<p>如果您对我们公司，您的订单，或是您收到的商品有任何疑问，欢迎联系我们。</p>
+	<p>邮箱: admin@sunshinegrocery.com</p>
+	<p>电话: (613) 123-9876</p>
+</div>
+
+<div id="Acknowledgements" class="tabcontent">
+	<h3 style="color: green;">致谢</h3>
+	<p>感谢渥太华大学提供的课程SEG3125给我们机会创建我们的在线食品杂货店。</p>
+	<p>我们网站的初始代码由教授Caroline Barrière提供。</p>
+	<p>导航栏的代码(弹出式菜单导航模式)来源于<span><a href="https://www.w3schools.com/howto/howto_css_subnav.asp">W3 School网站</a></span>。 我们做出了适当修改以适应我们的网站。</p>
+	<p>本网站上的法语和德语的词句由谷歌翻译提供。</p>
+</div>
+
+<footer><p id="signature">Stone Wu设计</p></footer>
+
+<script src="../scripts/groceries_c.js"></script>
+<script src="../scripts/main_c.js"></script>
+<script src="../scripts/language.js"></script>
+<script type="text/javascript">
+	populateListProductChoices("dietSelect", "displayProduct");
+</script>
+
+</body>
+</html>

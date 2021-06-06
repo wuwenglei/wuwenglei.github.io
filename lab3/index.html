@@ -1,64 +1,305 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
-	<!-- Modified by Wenglei Wu on May 29, 2021 -->
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<!-- Created by Wenglei Wu on May 29, 2021 -->
 	<meta charset="utf-8">
 	<title>Sunshine Grocery</title>
+	<style type="text/css">
+
+	body{
+	  background-image: url(images/background.jpg);
+	  background-position: center;
+	  background-attachment: fixed;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+
+	#signature {
+		position: absolute;
+		bottom: 1px;
+		right: 20px;
+		color: green;
+		font-style: italic;
+		font-size: 75%;
+	}
+
+  div {
+	  text-align: center;
+  }
+
+	h1 {
+		background-color: transparent;
+	  color: hsl(32, 80%, 55%);
+	  text-align: center;
+	  text-shadow: -4px 4px 6px hsl(180, 50%, 55%);
+	}
+
+	h3 {
+		color: rgba(0, 0, 255, 0.5);
+	}
+
+	select {
+	  width: 6%;
+	  height: 30px;
+	  padding: 5px 7px;
+	  border: 1px solid gray;
+	  border-radius: 10px;
+	  background-color: rgba(255,255,255,0.5);
+	}
+
+	#linkToMain {
+		display: block;
+		width: 20%;
+		border: 1px solid black;
+		background-color: rgba(255,255,255,0.5);
+		color: rgba(0,0,0,0.8);
+		padding: 14px 28px;
+		font-size: 150%;
+		text-align: center;
+		margin: 0 auto;
+	  border-radius: 20%;
+	  outline: none;
+	  cursor: pointer;
+	  transition: 0.3s;
+	}
+
+	#linkToMain:hover {
+	  background-color: #ddd;
+	}
+
+	#linkToMain:active {
+	  background-color: #ccc;
+	}
+
+	#headingsDiv {
+		position: relative;
+		top: 60px;
+    -webkit-animation: movingHeadingsDiv linear 1s 1;
+    -moz-animation: movingHeadingsDiv linear 1s 1;
+    animation: movingHeadingsDiv linear 1s 1;
+	}
+
+	@-webkit-keyframes movingHeadingsDiv {
+		0% {opacity:0; left: 0px; top: 20px;}
+	  25% {opacity:0.25; left: 0px; top: 30px;}
+	  50% {opacity:0.5; left: 0px; top: 40px;}
+	  75% {opacity:0.75; left: 0px; top: 50px;}
+	  100% {opacity:1; left: 0px; top: 60px;}
+  }
+
+  @-moz-keyframes movingHeadingsDiv {
+		0% {opacity:0; left: 0px; top: 20px;}
+	  25% {opacity:0.25; left: 0px; top: 30px;}
+	  50% {opacity:0.5; left: 0px; top: 40px;}
+	  75% {opacity:0.75; left: 0px; top: 50px;}
+	  100% {opacity:1; left: 0px; top: 60px;}
+  }
+
+  @keyframes movingHeadingsDiv {
+		0% {opacity:0; left: 0px; top: 20px;}
+	  25% {opacity:0.25; left: 0px; top: 30px;}
+	  50% {opacity:0.5; left: 0px; top: 40px;}
+	  75% {opacity:0.75; left: 0px; top: 50px;}
+	  100% {opacity:1; left: 0px; top: 60px;}
+  }
+
+	#languageSelectionDiv {
+		position: relative;
+		top: 80px;
+		-webkit-animation: movingLanguageSelectionDiv linear 1s 1;
+		-moz-animation: movingLanguageSelectionDiv linear 1s 1;
+		animation: movingLanguageSelectionDiv linear 1s 1;
+	}
+
+	@-webkit-keyframes movingLanguageSelectionDiv {
+		0% {opacity:0; left: 0px; top: 120px;}
+		25% {opacity:0.25; left: 0px; top: 110px;}
+		50% {opacity:0.5; left: 0px; top: 100px;}
+		75% {opacity:0.75; left: 0px; top: 90px;}
+		100% {opacity:1; left: 0px; top: 80px;}
+	}
+
+	@-moz-keyframes movingLanguageSelectionDiv {
+		0% {opacity:0; left: 0px; top: 120px;}
+		25% {opacity:0.25; left: 0px; top: 110px;}
+		50% {opacity:0.5; left: 0px; top: 100px;}
+		75% {opacity:0.75; left: 0px; top: 90px;}
+		100% {opacity:1; left: 0px; top: 80px;}
+	}
+
+	@keyframes movingLanguageSelectionDiv {
+		0% {opacity:0; left: 0px; top: 120px;}
+		25% {opacity:0.25; left: 0px; top: 110px;}
+		50% {opacity:0.5; left: 0px; top: 100px;}
+		75% {opacity:0.75; left: 0px; top: 90px;}
+		100% {opacity:1; left: 0px; top: 80px;}
+	}
+
+	#buttonDiv {
+		position: relative;
+		top: 100px;
+		-webkit-animation: movingButtonDiv linear 1s 1;
+		-moz-animation: movingButtonDiv linear 1s 1;
+		animation: movingButtonDiv linear 1s 1;
+	}
+
+	@-webkit-keyframes movingButtonDiv {
+		0% {opacity:0; left: 0px; top: 140px;}
+		25% {opacity:0.25; left: 0px; top: 130px;}
+		50% {opacity:0.5; left: 0px; top: 120px;}
+		75% {opacity:0.75; left: 0px; top: 110px;}
+		100% {opacity:1; left: 0px; top: 100px;}
+	}
+
+	@-moz-keyframes movingButtonDiv {
+		0% {opacity:0; left: 0px; top: 140px;}
+		25% {opacity:0.25; left: 0px; top: 130px;}
+		50% {opacity:0.5; left: 0px; top: 120px;}
+		75% {opacity:0.75; left: 0px; top: 110px;}
+		100% {opacity:1; left: 0px; top: 100px;}
+	}
+
+	@keyframes movingButtonDiv {
+		0% {opacity:0; left: 0px; top: 140px;}
+		25% {opacity:0.25; left: 0px; top: 130px;}
+		50% {opacity:0.5; left: 0px; top: 120px;}
+		75% {opacity:0.75; left: 0px; top: 110px;}
+		100% {opacity:1; left: 0px; top: 100px;}
+	}
+
+	</style>
+
 </head>
 
 <body>
-<div id="StoreName">
-	<h1>Sunshine Grocery</h1>
-</div>
+	<div id="headingsDiv">
+	  <h1 id="sentenceWelcome"></h1>
+	  <h3 id="sentenceByHour"></h3>
+  </div>
 
-<!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
-  <button class="tablinks" onclick="openInfo(event, 'Client')">--Client--</button>
-  <button class="tablinks" onclick="openInfo(event, 'Products')">--Products--</button>
-  <button class="tablinks" onclick="openInfo(event, 'Cart')">--Cart--</button>
-</div>
+	<div id="languageSelectionDiv">
+		<p><span id="sentenceSelectLanguage"></span>
+			<select id="languageSelect" name="languageSelect" onchange="setLanguage(this.id);updateAll()">
+			  <option value="English" selected="selected">English</option>
+		    <option value="Français">Français</option>
+		    <option value="Deutsche">Deutsche</option>
+				<option value="简体中文">简体中文</option>
+		  </select>
+	  </p>
+	</div>
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Choose a Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="LactoseFree">LactoseFree</option>
-    <option value="NutFree">NutFree</option>
-    <option value="None">None</option>
-	</select>
-	<br>
-	<br>
-	Prefer organic food:
-	<label><input type="radio" name="organicRadio" value="Yes" class="Radio" onchange="setOrganicTrue(); populateListProductChoices('dietSelect', 'displayProduct')">Yes</label>
-	<label><input type="radio" name="organicRadio" value="No" checked="checked" class="Radio" onchange="setOrganicFalse(); populateListProductChoices('dietSelect', 'displayProduct')">No</label>
-  <br>
-</div>
+	<div id="buttonDiv">
+		<button id="linkToMain" type="button" onclick="window.location.href=mainLocation"></button>
+	</div>
 
-<div id="Products" class="tabcontent">
-  <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
-	 Choose items to buy:
-	 <div id="displayProduct"></div>
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
-	</button>
-</div>
 
-<div id="Cart" class="tabcontent">
-  <h3>Cart</h3>
-  <p>Here is your cart.</p>
-  <div id="displayCart"></div>
-</div>
+  <footer><p id="signature">Website designed by Stone Wu</p></footer>
+	<script src="scripts/language.js"></script>
+	<script type="text/javascript">
+	  updateAll();
 
-<footer><p id="signature">Website designed by Stone Wu</p></footer>
+		function updateSentenceWelcome() {
+			var sentence = "";
+			if (language == "English") {
+				sentence="Welcome to Sunshine Grocery!";
+			} else if (language == "Français") {
+				sentence="Bienvenue à Sunshine Épicerie!";
+			} else if (language == "Deutsche") {
+				sentence="Willkommen bei Sonnenschein Lebensmittel!";
+			} else if (language == "简体中文") {
+				sentence="欢迎光临阳光食品杂货店！";
+			}
+			document.getElementById("sentenceWelcome").innerHTML = sentence;
+		}
 
-<script src="scripts/groceries.js"></script>
-<script src="scripts/main.js"></script>
+		function updateSentenceByHour() {
+			var date;
+			var hour;
+			var sentence = "";
+			date = new Date();
+			hour = date.getHours();
+			if (hour >= 5 && hour < 12) {
+				if (language == "English") {
+					sentence="Good morning! Enjoy your new day!";
+				} else if (language == "Français") {
+					sentence="Bonjour! Profitez de votre nouvelle journée !";
+				} else if (language == "Deutsche") {
+					sentence="Guten Morgen! Genieße deinen neuen Tag!";
+				} else if (language == "简体中文") {
+					sentence="早上好！享受崭新的一天吧！";
+				}
+			} else if (hour >= 12 && hour < 18) {
+				if (language == "English") {
+					sentence="Good afternoon! Keep energetic!";
+				} else if (language == "Français") {
+					sentence="Bon après-midi! Restez énergique!";
+				} else if (language == "Deutsche") {
+					sentence="Guten Tag! Bleiben Sie energisch!";
+				} else if (language == "简体中文") {
+					sentence="下午好！保持精神！";
+				}
+			} else if (hour >= 18 && hour < 23) {
+				if (language == "English") {
+					sentence="Good evening! Prepare yourself with a delicious meal!";
+				} else if (language == "Français") {
+					sentence="Bonne soirée! Préparez-vous avec un délicieux repas!";
+				} else if (language == "Deutsche") {
+					sentence="Guten Abend! Bereiten Sie sich mit einem leckeren Essen vor!";
+				} else if (language == "简体中文") {
+					sentence="晚上好！给自己准备一顿美味的晚餐吧！";
+				}
+			} else {
+				if (language == "English") {
+					sentence="Wow! You are so diligent! But please do not stay up too late, take a rest!";
+				} else if (language == "Français") {
+					sentence="Wow! Vous êtes si diligent ! Mais s'il vous plaît, ne veillez pas trop tard, reposez-vous!";
+				} else if (language == "Deutsche") {
+					sentence="Beeindruckend! Du bist so fleißig! Aber bitte nicht zu lange aufbleiben, ruhen Sie sich aus!";
+				} else if (language == "简体中文") {
+					sentence="哇塞！你真勤奋！但请不要熬夜太晚哦，休息一下吧！";
+				}
+			}
+			document.getElementById("sentenceByHour").innerHTML = sentence;
+		}
+
+		function updateSentenceSelectLanguage() {
+			var sentence = "";
+			if (language == "English") {
+				sentence="Please select your preferred language:";
+			} else if (language == "Français") {
+				sentence="Veuillez sélectionner votre langue préférée:";
+			} else if (language == "Deutsche") {
+				sentence="Bitte wählen Sie die gewünschte Sprache aus:";
+			} else if (language == "简体中文") {
+				sentence="请选择您偏好的语言：";
+			}
+			document.getElementById("sentenceSelectLanguage").innerHTML = sentence;
+		}
+
+		function updateButtonText() {
+			var text = "";
+			if (language == "English") {
+				text="Begin Shopping";
+			} else if (language == "Français") {
+				text="Commencer à Magasiner";
+			} else if (language == "Deutsche") {
+				text="Beginnen Sie mit dem Einkaufen";
+			} else if (language == "简体中文") {
+				text="开始购物";
+			}
+			document.getElementById("linkToMain").innerHTML = text;
+		}
+
+		function updateAll() {
+			updateSentenceWelcome();
+			updateSentenceByHour();
+			updateSentenceSelectLanguage();
+			updateButtonText();
+		}
+
+
+	</script>
+
 
 </body>
 </html>

@@ -85,7 +85,7 @@ function selectedItems(){
 
 	// build list of selected item
 	var para = document.createElement("P");
-	para.innerHTML = "You selected: ";
+	para.innerHTML = "Vous avez sélectionné: ";
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) {
 		if (ele[i].checked) {
@@ -97,8 +97,8 @@ function selectedItems(){
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
-	document.getElementById("checkoutprice").innerHTML="You should pay: $"+getTotalPrice(chosenProducts);
+	c.appendChild(document.createTextNode("Le prix total est de $" + getTotalPrice(chosenProducts)));
+	document.getElementById("checkoutprice").innerHTML="Vous devriez payer: $"+getTotalPrice(chosenProducts);
 
 }
 

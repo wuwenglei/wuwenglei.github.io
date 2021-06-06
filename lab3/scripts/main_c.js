@@ -63,7 +63,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label');
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName+"  $"+productPrice+"  Description: "+productDescription));
+		label.appendChild(document.createTextNode(productName+"  $"+productPrice+"  商品描述： "+productDescription));
 		s2.appendChild(label);
 
 		// create a breakline node and add in HTML DOM
@@ -85,7 +85,7 @@ function selectedItems(){
 
 	// build list of selected item
 	var para = document.createElement("P");
-	para.innerHTML = "You selected: ";
+	para.innerHTML = "你选择了： ";
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) {
 		if (ele[i].checked) {
@@ -97,8 +97,8 @@ function selectedItems(){
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
-	document.getElementById("checkoutprice").innerHTML="You should pay: $"+getTotalPrice(chosenProducts);
+	c.appendChild(document.createTextNode("总价是： $" + getTotalPrice(chosenProducts)));
+	document.getElementById("checkoutprice").innerHTML="你需要支付： $"+getTotalPrice(chosenProducts);
 
 }
 

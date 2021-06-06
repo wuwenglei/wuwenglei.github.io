@@ -6,12 +6,12 @@
 
 var products = [
 	{
-		name: "banana",
+		name: "banane",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 1.50,
-		description: "One single American organic banana. Moderately sweet."
+		description: "Une seule banane biologique américaine. Modérément sucrée."
 	},
 	{
 		name: "brocoli",
@@ -19,87 +19,87 @@ var products = [
 		nutFree: true,
 		organic: true,
 		price: 1.99,
-		description: "One single Canadian organic brocoli. Very delicious."
+		description: "Un seul brocoli biologique canadien. Très délicieux."
 	},
 	{
-		name: "pure chocolate",
+		name: "chocolat pur",
 		lactoseFree: true,
 		nutFree: true,
 		organic: false,
 		price: 2.20,
-		description: "Pure chocolate from New Zealand with no lactose and nut."
+		description: "Pur chocolat de Nouvelle-Zélande sans lactose ni noix."
 	},
 	{
-		name: "hickory milk",
+		name: "lait de caryer",
 		lactoseFree: false,
 		nutFree: false,
 		organic: false,
 		price: 2.59,
-		description: "Chinese hickory milk, which is good for brain health."
+		description: "Le lait d'hickory chinois, qui est bon pour la santé du cerveau."
 	},
 	{
-		name: "yogurt",
+		name: "yaourt",
 		lactoseFree: false,
 		nutFree: true,
 		organic: true,
 		price: 2.99,
-		description: "Ottawa product. Organic and healthy."
+		description: "Produit d'Ottawa. Biologique et sain."
 	},
 	{
-		name: "ice-cream",
+		name: "glace",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 4.00,
-		description: "Haagen-Dazs. Flavors available: strawberry, blueberry, vanilla, chocolate, coffee, matcha."
+		description: "Haagen-Dazs. Saveurs disponibles : fraise, myrtille, vanille, chocolat, café, matcha."
 	},
 	{
-		name: "roast chicken",
+		name: "poulet rôti",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 4.99,
-		description: "A whole chicken. Organic. Cooked by our founder Stone Wu. Extremely tasty!"
+		description: "Un poulet entier. Biologique. Cuit par notre fondateur Stone Wu. Extrêmement savoureux!"
 	},
 	{
-		name: "milk tea",
+		name: "thé au lait",
 		lactoseFree: false,
 		nutFree: true,
 		organic: false,
 		price: 5.00,
-		description: "One bottle of milk tea produced by our grocery."
+		description: "Une bouteille de thé au lait produite par notre épicerie."
 	},
 	{
-		name: "pesto sauce",
+		name: "sauce pesto",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.00,
-		description: "Imported from Italy."
+		description: "Importé d'Italie."
 	},
 	{
-		name: "peanut butter",
+		name: "beurre d'arachide",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 6.50,
-		description: "Imported from USA."
+		description: "Importé des États-Unis."
 	},
 	{
-		name: "almond granola",
+		name: "granola aux amandes",
 		lactoseFree: true,
 		nutFree: false,
 		organic: false,
 		price: 7.35,
-		description: "Canadian product. Sufficient for at least 10 meals."
+		description: "Produit canadien. Suffisant pour au moins 10 repas."
 	},
 	{
-		name: "salmon",
+		name: "saumon",
 		lactoseFree: true,
 		nutFree: true,
 		organic: true,
 		price: 10.00,
-		description: "Fresh Japanese organic salmon. High protein."
+		description: "Saumon japonais frais biologique. Riche en protéines."
 	}
 ];
 
