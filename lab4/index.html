@@ -5,12 +5,14 @@
 <!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
 <!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
 
+<!-- Modified by Wenglei Wu on June 11, 2021 -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <!-- The head should contain an appropriate title for your site -->
 <head>
-    <title>Module 4 - Labo</title>
+    <title>Family Physio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -33,218 +35,260 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     <div class="container-md p-3 my-3 border bg-dark text-white">
-        <h1>Welcome to Nice Scissors</h1>
-        <p>We'll take care of your hair!</p>
+        <h1>Family Physio</h1>
+        <p>Give us a chance to remove your injury with our effective treatment and care!</p>
     </div>
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
-    <div class="row p-3">
-        <div class="col-sm-3 pl-5">Service</div>
-        <div class="col-sm-3">Calendar</div>
-        <div class="col-sm-3">Payment</div>
-        <div class="col-sm-3">Where to find us</div>
+    <div class="container-md p-3 my-3">
+      <div class="row p-3 bg-white border">
+          <div class="col-sm-3 pl-5"><a href="#location">Locations</a></div>
+          <div class="col-sm-3 pl-5"><a href="#services">Services</a></div>
+          <div class="col-sm-3 pl-5"><a href="#experts">Experts</a></div>
+          <div class="col-sm-3 pl-5"><a href="#reservations">Reservations</a></div>
+      </div>
     </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
-    <div class="container-md p-3 my-3 border bg-light text-success">
-        <h3>Let us tell you about our expertise</h3>
-        <p>We can <mark>cut hair</mark></p>
-        <p class="text-center" >Align wheels</p>
-        <p class="text-uppercase">Write in uppercase</p>
-        <p class="text-center text-uppercase" >centered and uppercase</p>
+    <div class="container-md p-3 my-3 border bg-light text-black" id="locations">
+        <h2>Our locations</h2>
+        <p>We have two clinics available in Ottawa.</p>
+        <ol>
+          <li>Southern Ottawa: 133 South Avenue, Ottawa, Ontario, Canada.</li>
+          <li>Rideau: 245 Rideau St, Ottawa, Ontario, Canada.</li>
+        </ol>
     </div>
 
 
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
-    <div class="container">
-        <h2>Service description</h2>
-        <p>Here is a list of services offered</p>            
-        <table class="table table-primary table-hover">
+    <div class="container-md p-3 my-3 border bg-light" id="services">
+        <h2>Our Services</h2>
+        <p>Here are the services offered by us.</p>
+        <table class="table table-dark table-striped table-bordered">
             <thead>
             <tr>
                 <th>Service</th>
+                <th>Price</th>
                 <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Haircut</td>
-                <td>Bla bla</td>
+                <td>Basic Consultation</td>
+                <td class="text-warning">$20 / 30min</td>
+                <td class="text-info">Answering your health concerns; giving you some basic suggections.</td>
             </tr>
             <tr>
-                <td>Drying</td>
-                <td>Bla bla</td>
+                <td>Advanced Consultation</td>
+                <td class="text-warning">$40 / 30min</td>
+                <td class="text-info">Answering your health concerns; giving you advanced suggections of health improvement; arranging a detailed recovery schedule for you.</td>
             </tr>
             <tr>
-                <td>Coloring</td>
-                <td>Bla bla</td>
+                <td>Health Assessment</td>
+                <td class="text-warning">$100 / Assessment</td>
+                <td class="text-info">Professional assessment of your physical fitness and health.</td>
             </tr>
+            <tr>
+                <td>Sports Injury Treatment</td>
+                <td class="text-warning">$150 / 60min</td>
+                <td class="text-info">Recover from sports injury with our expert physiotherapy.</td>
+            </tr>
+            <tr>
+                <td>Dry Needling Therapy</td>
+                <td class="text-warning">$200 / 45min</td>
+                <td class="text-info">A highly skilled specific treatment technique used on muscular trigger points that can create or contribute to pain and dysfunction.</td>
+            </tr>
+            <tr>
+                <td>Pelvic Health Treatment</td>
+                <td class="text-warning">$80 / 30min</td>
+                <td class="text-info">Improve your pelvic health by our special treatment.</td>
+            </tr>
+            <tr>
+                <td>Sports Massage</td>
+                <td class="text-warning">$240 / 90min</td>
+                <td class="text-info">The application of soft tissue techniques to stimulate or relax muscles.</td>
+            </tr>
+            <tr>
+                <td>Bike Fit</td>
+                <td class="text-warning">$120 / 45min</td>
+                <td class="text-info">Expert Bike Fitting using the very latest gebioMized® motion analysis technology and ‘off bike’ functional assessment.</td>
+            </tr>
+            <tr>
+                <td>Ultrasound Guided Injection</td>
+                <td class="text-warning">$400 / Injection</td>
+                <td class="text-info">Ultrasound guided pain relieving injection.</td>
+            </tr>
+
             </tbody>
         </table>
-    </div>
-
-
-    <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
-    <!-- These can be useful for making sure someone reads something before continuing -->
-    <div class="container">
-        <h2>Alert</h2>
-        <p>We have something important to say</p>
-        <div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Please read! </strong>You must read.
-        </div>
-    </div>
-
-    <!-- You'll certainly need buttons at some point in your site -->
-    <!-- https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp -->
-    <!-- Remember how we talked about choosing a hue and changing the saturation for active/inactive -->
-    <!-- This idea is already part of the components in Bootstrap -->
-    <div class="container">
-        <h2>Button States</h2>
-        <button type="button" class="btn btn-warning">Primary Button</button>
-        <button type="button" class="btn btn-warning active">Active Primary</button>
-        <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
-    </div>
-
-
-    <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
-    <!-- Modals are useful for additional information or questions -->
-    <!-- Here the modal is used for a little survey -->
-    <div class="container">
-        <h2>Modal Example</h2>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
-          
-        <!-- Modal -->
-        <div class="modal fade" id="mySurvey" role="dialog">
-            <div class="modal-dialog">  
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <h2>How did you hear about us?</h2>
-                        <p>Tell us:</p>
-                        <form>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 1</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 2</label>
-                          </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>     
-        </div>
-        </div>    
-    </div>
-
-    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
-    <!-- Card columns allows multiple cards next to each other -->
-    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
-    <!-- My second card limits the information seen and uses collapsible to show more -->
-    <div class="container p-3">
-        <h2>Meet our hairdressers</h2>
-        <div class="card-columns">
-            <div class="card bg-warning" style="width:200px">
-                <img class="card-img-top" src="images/Jule.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">Jules has been cutting hair for 10 years.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card bg-danger" style="width:200px">
-                <img class="card-img-top" src="images/Jule.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Jules</h4>
-                    <p class="card-text">The curly hair specialist</p>
-                    <!-- collapsible part -->
-                    <a href="#profile" class="btn btn-primary" data-toggle="collapse">See Profile</a>
-                    <div id="profile" class="collapse p-3">
-                        <p>Jules has been cutting hair for 10 years ... </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
     <!-- A different approach would be to make the whole staff information collapsible -->
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
-    <div class="container">
-        <h2>More information</h2>
-        <a href="#mechanics" class="btn btn-primary btn-block" data-toggle="collapse">Meet our mechanics</a>
-        <div id="mechanics" class="collapse">
-            <div class="card bg-warning" style="width:200px">
-                <img class="card-img-top" src="images/Erwind.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Erwind</h4>
-                    <p class="card-text">Erwind knows all about bikes.</p>
-                </div>
-            </div>
+    <div class="container-md p-3 my-3 border bg-light" id="experts">
+        <h2>Our experts</h2>
+        <p>Click "Meet our expert" to see information of our experts.</p>
+        <a href="#expert" class="btn btn-primary btn-block" data-toggle="collapse">Meet our experts</a>
+        <div id="expert" class="collapse">
+          <div class="card-columns">
+              <div class="card bg-info" style="width:300px;">
+                  <img class="card-img-top" src="images/Mike.jpeg" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                      <h4 class="card-title">Mike</h4>
+                      <p class="card-text">An expert of dry needling therapy, sports massage, and ultrasound guided injection.</p>
+                      <!-- collapsible part -->
+                      <a href="#profile1" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                      <div id="profile1" class="collapse p-3">
+                          <p><strong>Physiotherapy PhD</strong></p>
+                          <p><strong>Certificated Physio</strong></p>
+                          <p><strong>10-year Experience</strong></p>
+                          <p><strong>Canadian Massage Competition - Golden Prize</strong></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="card bg-info" style="width:300px">
+                  <img class="card-img-top" src="images/Alice.jpeg" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                      <h4 class="card-title">Alice</h4>
+                      <p class="card-text">Our licenced health consultant. An expert of sports injury treatment.</p>
+                      <!-- collapsible part -->
+                      <a href="#profile2" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                      <div id="profile2" class="collapse p-3">
+                          <p><strong>Master of Physiotherapy</strong></p>
+                          <p><strong>Licenced Consultant</strong></p>
+                          <p><strong>98% Customer Satisfaction</strong></p>
+                          <p><strong>3-year Experience</strong></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="card bg-info" style="width:300px">
+                  <img class="card-img-top" src="images/Bob.jpeg" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                      <h4 class="card-title">Bob</h4>
+                      <p class="card-text">An expert of sports injury treatment, pelvic health treatment, and bike fit.</p>
+                      <!-- collapsible part -->
+                      <a href="#profile3" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                      <div id="profile3" class="collapse p-3">
+                        <p><strong>Physiotherapy PhD</strong></p>
+                        <p><strong>Certificated Physio</strong></p>
+                        <p><strong>5-year Experience</strong></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
+
 
     <!-- Collapsible with multiple items - accordion -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
-    <div class="container">
-        <div class="container-md p-3 my-3 border bg-warning text-white">
-            <h1>Erwind's and friends bike shop</h1>
-            <p>Bike fixing is our business</p>
-        </div>
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
-                </div>
-                <div id="collapseService" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Here is our list of services</p>
-                    </div>
-                </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
-                </div>
-                <div id="collapseDate" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>What date?</p>
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                        <div class="form-group row">
-                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
-                </div>
-                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Your information so we can contact you</p>
-                        <p>Form to enter name, email, phone</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-md p-3 my-3 border bg-light" id="reservations">
+      <h2>Reservations</h2>
+      <p>Please fill out the form below to request an appointment.</p>
+      <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          Due to the COVID-19 pandemic, you are required to <strong>wear a face mask</strong> in our clinics.
+      </div>
+      <div id="accordion">
+          <div class="card">
+              <div class="card-header">
+                  <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+              </div>
+              <div id="collapseService" class="collapse show" data-parent="#accordion">
+                  <div class="card-body">
+                      <form class="" action="#">
+                        <p>Please select the service you want.</p>
+                        <p>
+                          <label><input type="radio" name="selectService" value="Basic Consultation"> Basic Consultation</label><br>
+                          <label><input type="radio" name="selectService" value="Advanced Consultation"> Advanced Consultation</label><br>
+                          <label><input type="radio" name="selectService" value="Health Assessment"> Health Assessment</label><br>
+                          <label><input type="radio" name="selectService" value="Sports Injury Treatment"> Sports Injury Treatment</label><br>
+                          <label><input type="radio" name="selectService" value="Dry Needling Therapy"> Dry Needling Therapy</label><br>
+                          <label><input type="radio" name="selectService" value="Pelvic Health Treatment"> Pelvic Health Treatment</label><br>
+                          <label><input type="radio" name="selectService" value="Sports Massage"> Sports Massage</label><br>
+                          <label><input type="radio" name="selectService" value="Bike Fit"> Bike Fit</label><br>
+                          <label><input type="radio" name="selectService" value="Ultrasound Guided Injection"> Ultrasound Guided Injection</label><br>
+                        </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClinic">Choose a clinic</a>
+              </div>
+              <div id="collapseClinic" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                      <p>Please select your preferred clinic. Our expert will get to the clinic you choose in advance.</p>
+                      <!-- Bootstrap has various input components. Some examples are given here: -->
+                      <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                      <div class="form-group row">
+                        <label for="selectClinic" class="col-2 col-form-label">Clinic</label>
+                          <div class="col-10">
+                            <select class="form-control" id="selectClinic">
+                              <option value="Southern Ottawa" selected="selected">Southern Ottawa</option>
+                              <option value="Rideau">Rideau</option>
+                            </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+              </div>
+              <div id="collapseDate" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                      <p>Tell us the date and time.</p>
+                      <!-- Bootstrap has various input components. Some examples are given here: -->
+                      <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                      <div class="form-group row">
+                          <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                          <div class="col-10">
+                              <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your contact infomation</a>
+              </div>
+              <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                      <div class="form-group">
+                        <p>Please enter below your contact information.</p>
+                        <form class="" action="#">
+                          <p>
+                            <label>Name: <input class="form-control" type="text" name="name" placeholder="enter your name"></label>
+                          </p>
+                          <p>
+                            <label>Phone number: <input class="form-control" type="text" name="phonenumber" placeholder="(XXX) XXX-XXXX"></label>
+                          </p>
+                          <p>
+                            <label>E-mail: <input class="form-control" type="email" name="email" placeholder="enter your e-mail address" size="30"></label>
+                          </p>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="submit-button">
+        <button type="button" name="button" class="btn btn-primary btn-block">SUBMIT BOOKING INFO</button>
+      </div>
     </div>
+
+    <footer><p id="signature">Website designed by Stone Wu</p></footer>
 
 </body>
 </html>
