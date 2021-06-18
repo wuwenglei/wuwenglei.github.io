@@ -1,0 +1,35 @@
+
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* Modified by Wenglei Wu on June 11, 2021 */
+
+/* Bootstrap default font-family is Helvetica Neue */
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 3px 3px 1px black;
+
+}
+
+h2 {
+  font-family: serif;
+}
+
+body {
+  background-color: darkgray;
+}
+
+/* Style the signature */
+#signature {
+  position: relative;
+  left: -10px;
+  text-align: right;
+  color: white;
+  font-style: italic;
+  font-size: 75%;
+}
+
+div {
+  border-radius: 20px;
+}
