@@ -22,6 +22,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Your own script -->
+    <script src="scripts/service.js"></script>
+
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -41,18 +51,16 @@
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
-    <div class="container-md p-3 my-3">
-      <div class="row p-3 bg-white border" style="font-family: serif; font-size: 140%">
-          <div class="col-sm-3 pl-5"><a href="#location">Locations</a></div>
-          <div class="col-sm-3 pl-5"><a href="#services">Services</a></div>
-          <div class="col-sm-3 pl-5"><a href="#experts">Experts</a></div>
-          <div class="col-sm-3 pl-5"><a href="#reservations">Reservations</a></div>
-      </div>
+    <div class="row p-3 border fixed-top" style="font-family: serif; font-size: 140% position: sticky; text-align: center; background-color: rgba(240,240,240,0.8)">
+        <div class="col-sm-3 pl-3"><a href="#location">Locations</a></div>
+        <div class="col-sm-3 pl-3"><a href="#services">Services</a></div>
+        <div class="col-sm-3 pl-3"><a href="#experts">Experts</a></div>
+        <div class="col-sm-3 pl-3"><a href="#reservations">Reservations</a></div>
     </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div class="container-md p-3 my-3 border bg-light text-black" id="locations">
-        <h2>Our locations</h2>
+        <h2><img src="images/icons8-location-50.png" alt="Location icon" style="height: 40px; width: 40px; position: relative; left: -3px; top: -5px">Our locations</h2>
         <p>We have two clinics available in Ottawa.</p>
         <ol>
           <li>Southern Ottawa: 133 South Avenue, Ottawa, Ontario, Canada.</li>
@@ -64,8 +72,9 @@
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container-md p-3 my-3 border bg-light" id="services">
-        <h2>Our Services</h2>
+        <h2><img src="images/icons8-service-50.png" alt="Service icon" style="height: 40px; width: 40px; position: relative; left: -3px; top: -5px">Our Services</h2>
         <p>Here are the services offered by us.</p>
+        <h4 class="tableH4">Consultations and Assessments</h4>
         <table class="table table-dark table-striped table-bordered">
             <thead>
             <tr>
@@ -90,15 +99,24 @@
                 <td class="text-warning">$100 / Assessment</td>
                 <td class="text-info">Professional assessment of your physical fitness and health.</td>
             </tr>
+
+            </tbody>
+        </table>
+
+        <h4 class="tableH4">Fundamental Physiotherapy Services</h4>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>Sports Injury Treatment</td>
                 <td class="text-warning">$150 / 60min</td>
                 <td class="text-info">Recover from sports injury with our expert physiotherapy.</td>
-            </tr>
-            <tr>
-                <td>Dry Needling Therapy</td>
-                <td class="text-warning">$200 / 45min</td>
-                <td class="text-info">A highly skilled specific treatment technique used on muscular trigger points that can create or contribute to pain and dysfunction.</td>
             </tr>
             <tr>
                 <td>Pelvic Health Treatment</td>
@@ -109,6 +127,25 @@
                 <td>Sports Massage</td>
                 <td class="text-warning">$240 / 90min</td>
                 <td class="text-info">The application of soft tissue techniques to stimulate or relax muscles.</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h4 class="tableH4">Advanced Physiotherapy Services</h4>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Dry Needling Therapy</td>
+                <td class="text-warning">$200 / 45min</td>
+                <td class="text-info">A highly skilled specific treatment technique used on muscular trigger points that can create or contribute to pain and dysfunction.</td>
             </tr>
             <tr>
                 <td>Bike Fit</td>
@@ -130,7 +167,7 @@
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
     <div class="container-md p-3 my-3 border bg-light" id="experts">
-        <h2>Our experts</h2>
+        <h2><img src="images/icons8-facilitator-50.png" alt="Expert icon" style="height: 40px; width: 40px; position: relative; left: -3px; top: -5px">Our experts</h2>
         <p>Click "Meet our expert" to see information of our experts.</p>
         <a href="#expert" class="btn btn-primary btn-block" data-toggle="collapse">Meet our experts</a>
         <div id="expert" class="collapse">
@@ -189,7 +226,7 @@
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
     <div class="container-md p-3 my-3 border bg-light" id="reservations">
-      <h2>Reservations</h2>
+      <h2><img src="images/icons8-ticket-purchase-50.png" alt="Reservation icon" style="height: 40px; width: 40px; position: relative; left: -3px; top: -5px">Reservations</h2>
       <p>Please fill out the form below to request an appointment.</p>
       <div class="alert alert-danger alert-dismissible">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -198,7 +235,7 @@
       <div id="accordion">
           <div class="card">
               <div class="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+                  <a class="card-link" data-toggle="collapse" href="#collapseService"><img src="images/icons8-service-50.png" alt="Service icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Choose a service</a>
               </div>
               <div id="collapseService" class="collapse show" data-parent="#accordion">
                   <div class="card-body">
@@ -221,7 +258,24 @@
           </div>
           <div class="card">
               <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClinic">Choose a clinic</a>
+                  <a class="card-link" data-toggle="collapse" href="#collapseExpert"><img src="images/icons8-facilitator-50.png" alt="Expert icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Choose an expert</a>
+              </div>
+              <div id="collapseExpert" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                      <form class="" action="#">
+                        <p>Please select your preferred expert.</p>
+                        <p>
+                          <label><input type="radio" name="selectExpert" value="Mike"> Mike</label><br>
+                          <label><input type="radio" name="selectExpert" value="Alice"> Alice</label><br>
+                          <label><input type="radio" name="selectExpert" value="Bob"> Bob</label><br>
+                        </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClinic"><img src="images/icons8-clinic-50.png" alt="Clinic icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Choose a clinic</a>
               </div>
               <div id="collapseClinic" class="collapse" data-parent="#accordion">
                   <div class="card-body">
@@ -242,7 +296,7 @@
           </div>
           <div class="card">
               <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate"><img src="images/icons8-calendar-50.png" alt="Date icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Choose a date</a>
               </div>
               <div id="collapseDate" class="collapse" data-parent="#accordion">
                   <div class="card-body">
@@ -252,7 +306,7 @@
                       <div class="form-group row">
                           <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                           <div class="col-10">
-                              <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                              <input class="form-control" type="datetime-local" id="dateTimeInput">
                           </div>
                       </div>
                   </div>
@@ -260,7 +314,7 @@
           </div>
           <div class="card">
               <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your contact infomation</a>
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo"><img src="images/icons8-contact-us-50.png" alt="Contact icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Your contact infomation</a>
               </div>
               <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
                   <div class="card-body">
@@ -276,6 +330,25 @@
                           <p>
                             <label>E-mail: <input class="form-control" type="email" name="email" placeholder="enter your e-mail address" size="30"></label>
                           </p>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="collapsed card-link" data-toggle="collapse" href="#collapsePayment"><img src="images/icons8-online-payment-50.png" alt="Payment icon" style="height: 40px; width: 40px; position: relative; left: -5px; top: -2px">Payment</a>
+              </div>
+              <div id="collapsePayment" class="collapse" data-parent="#accordion">
+                  <div class="card-body">
+                      <div class="form-group">
+                        <p>Please enter below your payment information.<img src="images/icons8-ask-question-50.png" alt="Payment icon" style="height: 35px; width: 35px; position: relative; right: -10px"  id="debit" title="We ask for your credit card information in case of no-show, $20 will be charged."></p>
+                        <form class="" action="#">
+                          <p>Credit Card<img src="images/icons8-visa-50.png" alt="Payment icon" style="height: 30px; width: 30px; position: relative; right: -5px; top: -2px"><img src="images/icons8-mastercard-50.png" alt="Payment icon" style="height: 30px; width: 30px; position: relative; right: -10px; top: -2px"></p>
+                    			<input type="text" name="cardholdername" placeholder="Cardholder's Name">
+                          <input type="text" name="cardnumber" placeholder="Card Number">
+                          <input type="text" name="cvv" placeholder="CVV">
+                    			<input type="month" name="validuntil">
                         </form>
                       </div>
                   </div>
