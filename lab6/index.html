@@ -25,12 +25,13 @@
     <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
     <!-- which is built on top of JQuery and offers additional possibilities -->
     <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Your own script -->
     <script src="scripts/service.js"></script>
+    <script src="scripts/reservations.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -45,17 +46,17 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     <div class="container-md p-3 my-3 border bg-dark text-white">
-        <h1>Family Physio<img src="images/logo.png" alt="Logo of Family Physio" style="height: 8%; width: 8%; position: relative; right: -10px; top: -5px"></h1>
-        <p>Give us a chance to remove your injury with our effective treatment and care!</p>
+        <h1>Family Physio<img src="images/logo.png" alt="Logo of Family Physio" style="height: 8%; width: 8%; position: relative; right: -10px; top: -5px; border-radius: 7px;"></h1>
+        <p>Give us a chance to remove your injury with our effective treatment and care! We are physiotherapy professionals!</p>
     </div>
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
-    <div class="row p-3 border fixed-top" style="font-family: serif; font-size: 140% position: sticky; text-align: center; background-color: rgba(240,240,240,0.8)">
-        <div class="col-sm-3 pl-3"><a href="#location">Locations</a></div>
-        <div class="col-sm-3 pl-3"><a href="#services">Services</a></div>
-        <div class="col-sm-3 pl-3"><a href="#experts">Experts</a></div>
-        <div class="col-sm-3 pl-3"><a href="#reservations">Reservations</a></div>
+    <div class="row p-3 border fixed-top" style="font-family: serif; font-size: 140% position: sticky; text-align: center; background-color: rgba(240,240,240,0.9);">
+        <div class="col-sm-3 pl-3"><a href="#locations" style="color: black; font-size: 125%"><img src="images/icons8-location-50.png" alt="Location icon" style="height: 30px; width: 30px; position: relative; left: -3px; top: -3px">Locations</a></div>
+        <div class="col-sm-3 pl-3"><a href="#services" style="color: black; font-size: 125%"><img src="images/icons8-service-50.png" alt="Location icon" style="height: 30px; width: 30px; position: relative; left: -3px; top: -3px">Services</a></div>
+        <div class="col-sm-3 pl-3"><a href="#experts" style="color: black; font-size: 125%"><img src="images/icons8-facilitator-50.png" alt="Location icon" style="height: 30px; width: 30px; position: relative; left: -3px; top: -3px">Experts</a></div>
+        <div class="col-sm-3 pl-3"><a href="#reservations" style="color: black; font-size: 125%"><img src="images/icons8-ticket-purchase-50.png" alt="Location icon" style="height: 30px; width: 30px; position: relative; left: -3px; top: -3px">Reservations</a></div>
     </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
@@ -74,92 +75,112 @@
     <div class="container-md p-3 my-3 border bg-light" id="services">
         <h2><img src="images/icons8-service-50.png" alt="Service icon" style="height: 40px; width: 40px; position: relative; left: -3px; top: -5px">Our Services</h2>
         <p>Here are the services offered by us.</p>
-        <h4 class="tableH4">Consultations and Assessments</h4>
-        <table class="table table-dark table-striped table-bordered">
-            <thead>
-            <tr>
-                <th>Service</th>
-                <th>Price</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Basic Consultation</td>
-                <td class="text-warning">$20 / 30min</td>
-                <td class="text-info">Answering your health concerns; giving you some basic suggections.</td>
-            </tr>
-            <tr>
-                <td>Advanced Consultation</td>
-                <td class="text-warning">$40 / 30min</td>
-                <td class="text-info">Answering your health concerns; giving you advanced suggections of health improvement; arranging a detailed recovery schedule for you.</td>
-            </tr>
-            <tr>
-                <td>Health Assessment</td>
-                <td class="text-warning">$100 / Assessment</td>
-                <td class="text-info">Professional assessment of your physical fitness and health.</td>
-            </tr>
 
-            </tbody>
-        </table>
+        <p><strong>Consultations and Assessments</strong>: Basic Consultation, Advanced Consultation, Health Assessment.</p>
+        <a href="#service1" class="btn btn-primary btn-block" data-toggle="collapse">Consultations and Assessments</a>
+        <div id="service1" class="collapse">
+          <!-- <br> -->
+          <!-- <h4 class="tableH4">Consultations and Assessments</h4> -->
+          <table class="table table-dark table-striped table-bordered">
+              <thead>
+              <tr>
+                  <th>Service</th>
+                  <th>Price</th>
+                  <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Basic Consultation</td>
+                  <td class="text-warning">$20 / 30min</td>
+                  <td class="text-info">Answering your health concerns; giving you some basic suggections.</td>
+              </tr>
+              <tr>
+                  <td>Advanced Consultation</td>
+                  <td class="text-warning">$40 / 30min</td>
+                  <td class="text-info">Answering your health concerns; giving you advanced suggections of health improvement; arranging a detailed recovery schedule for you.</td>
+              </tr>
+              <tr>
+                  <td>Health Assessment</td>
+                  <td class="text-warning">$100 / Assessment</td>
+                  <td class="text-info">Professional assessment of your physical fitness and health.</td>
+              </tr>
 
-        <h4 class="tableH4">Fundamental Physiotherapy Services</h4>
-        <table class="table table-dark table-striped table-bordered">
-            <thead>
-            <tr>
-                <th>Service</th>
-                <th>Price</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Sports Injury Treatment</td>
-                <td class="text-warning">$150 / 60min</td>
-                <td class="text-info">Recover from sports injury with our expert physiotherapy.</td>
-            </tr>
-            <tr>
-                <td>Pelvic Health Treatment</td>
-                <td class="text-warning">$80 / 30min</td>
-                <td class="text-info">Improve your pelvic health by our special treatment.</td>
-            </tr>
-            <tr>
-                <td>Sports Massage</td>
-                <td class="text-warning">$240 / 90min</td>
-                <td class="text-info">The application of soft tissue techniques to stimulate or relax muscles.</td>
-            </tr>
+              </tbody>
+          </table>
+        </div>
+        <br>
 
-            </tbody>
-        </table>
+        <p><strong>Fundamental Physiotherapy Services</strong>: Sports Injury Treatment, Pelvic Health Treatment, Sports Massage.</p>
+        <a href="#service2" class="btn btn-primary btn-block" data-toggle="collapse">Fundamental Physiotherapy Services</a>
+        <div id="service2" class="collapse">
+          <!-- <br> -->
+          <!-- <h4 class="tableH4">Fundamental Physiotherapy Services</h4> -->
+          <table class="table table-dark table-striped table-bordered">
+              <thead>
+              <tr>
+                  <th>Service</th>
+                  <th>Price</th>
+                  <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Sports Injury Treatment</td>
+                  <td class="text-warning">$150 / 60min</td>
+                  <td class="text-info">Recover from sports injury with our expert physiotherapy.</td>
+              </tr>
+              <tr>
+                  <td>Pelvic Health Treatment</td>
+                  <td class="text-warning">$80 / 30min</td>
+                  <td class="text-info">Improve your pelvic health by our special treatment.</td>
+              </tr>
+              <tr>
+                  <td>Sports Massage</td>
+                  <td class="text-warning">$240 / 90min</td>
+                  <td class="text-info">The application of soft tissue techniques to stimulate or relax muscles.</td>
+              </tr>
 
-        <h4 class="tableH4">Advanced Physiotherapy Services</h4>
-        <table class="table table-dark table-striped table-bordered">
-            <thead>
-            <tr>
-                <th>Service</th>
-                <th>Price</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Dry Needling Therapy</td>
-                <td class="text-warning">$200 / 45min</td>
-                <td class="text-info">A highly skilled specific treatment technique used on muscular trigger points that can create or contribute to pain and dysfunction.</td>
-            </tr>
-            <tr>
-                <td>Bike Fit</td>
-                <td class="text-warning">$120 / 45min</td>
-                <td class="text-info">Expert Bike Fitting using the very latest gebioMized® motion analysis technology and ‘off bike’ functional assessment.</td>
-            </tr>
-            <tr>
-                <td>Ultrasound Guided Injection</td>
-                <td class="text-warning">$400 / Injection</td>
-                <td class="text-info">Ultrasound guided pain relieving injection.</td>
-            </tr>
+              </tbody>
+          </table>
+        </div>
+        <br>
 
-            </tbody>
-        </table>
+        <p><strong>Advanced Physiotherapy Services</strong>: Dry Needling Therapy, Bike Fit, Ultrasound Guided Injection.</p>
+        <a href="#service3" class="btn btn-primary btn-block" data-toggle="collapse">Advanced Physiotherapy Services</a>
+        <div id="service3" class="collapse">
+          <!-- <br> -->
+          <!-- <h4 class="tableH4">Advanced Physiotherapy Services</h4> -->
+          <table class="table table-dark table-striped table-bordered">
+              <thead>
+              <tr>
+                  <th>Service</th>
+                  <th>Price</th>
+                  <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Dry Needling Therapy</td>
+                  <td class="text-warning">$200 / 45min</td>
+                  <td class="text-info">A highly skilled specific treatment technique used on muscular trigger points that can create or contribute to pain and dysfunction.</td>
+              </tr>
+              <tr>
+                  <td>Bike Fit</td>
+                  <td class="text-warning">$120 / 45min</td>
+                  <td class="text-info">Expert Bike Fitting using the very latest gebioMized® motion analysis technology and ‘off bike’ functional assessment.</td>
+              </tr>
+              <tr>
+                  <td>Ultrasound Guided Injection</td>
+                  <td class="text-warning">$400 / Injection</td>
+                  <td class="text-info">Ultrasound guided pain relieving injection.</td>
+              </tr>
+
+              </tbody>
+          </table>
+        </div>
+        <br>
+
     </div>
 
 
@@ -176,7 +197,7 @@
                   <img class="card-img-top" src="images/Mike.jpeg" alt="Card image" style="width:100%">
                   <div class="card-body">
                       <h4 class="card-title">Mike</h4>
-                      <p class="card-text">An expert of dry needling therapy, sports massage, and ultrasound guided injection.</p>
+                      <p class="card-text">An expert of dry needling therapy, sports massage, and ultrasound guided injection. He can also provide you with other listed services. Unavailable on <strong>Wednesday</strong>.</p>
                       <!-- collapsible part -->
                       <a href="#profile1" class="btn btn-primary" data-toggle="collapse">See Profile</a>
                       <div id="profile1" class="collapse p-3">
@@ -191,7 +212,7 @@
                   <img class="card-img-top" src="images/Alice.jpeg" alt="Card image" style="width:100%">
                   <div class="card-body">
                       <h4 class="card-title">Alice</h4>
-                      <p class="card-text">Our licenced health consultant. An expert of sports injury treatment.</p>
+                      <p class="card-text">Our licenced health consultant. An expert of sports injury treatment.  She can also provide you with other listed services. Unavailable on <strong>Tuesday</strong>.</p>
                       <!-- collapsible part -->
                       <a href="#profile2" class="btn btn-primary" data-toggle="collapse">See Profile</a>
                       <div id="profile2" class="collapse p-3">
@@ -206,7 +227,7 @@
                   <img class="card-img-top" src="images/Bob.jpeg" alt="Card image" style="width:100%">
                   <div class="card-body">
                       <h4 class="card-title">Bob</h4>
-                      <p class="card-text">An expert of sports injury treatment, pelvic health treatment, and bike fit.</p>
+                      <p class="card-text">An expert of sports injury treatment, pelvic health treatment, and bike fit.  He can also provide you with other listed services. Unavailable on <strong>Monday</strong> and <strong>Friday</strong>.</p>
                       <!-- collapsible part -->
                       <a href="#profile3" class="btn btn-primary" data-toggle="collapse">See Profile</a>
                       <div id="profile3" class="collapse p-3">
@@ -242,15 +263,15 @@
                       <form class="" action="#">
                         <p>Please select the service you want.</p>
                         <p>
-                          <label><input type="radio" name="selectService" value="Basic Consultation"> Basic Consultation</label><br>
-                          <label><input type="radio" name="selectService" value="Advanced Consultation"> Advanced Consultation</label><br>
-                          <label><input type="radio" name="selectService" value="Health Assessment"> Health Assessment</label><br>
-                          <label><input type="radio" name="selectService" value="Sports Injury Treatment"> Sports Injury Treatment</label><br>
-                          <label><input type="radio" name="selectService" value="Dry Needling Therapy"> Dry Needling Therapy</label><br>
-                          <label><input type="radio" name="selectService" value="Pelvic Health Treatment"> Pelvic Health Treatment</label><br>
-                          <label><input type="radio" name="selectService" value="Sports Massage"> Sports Massage</label><br>
-                          <label><input type="radio" name="selectService" value="Bike Fit"> Bike Fit</label><br>
-                          <label><input type="radio" name="selectService" value="Ultrasound Guided Injection"> Ultrasound Guided Injection</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Basic Consultation" onclick="updateWhat()"> Basic Consultation</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Advanced Consultation" onclick="updateWhat()"> Advanced Consultation</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Health Assessment" onclick="updateWhat()"> Health Assessment</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Sports Injury Treatment" onclick="updateWhat()"> Sports Injury Treatment</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Dry Needling Therapy" onclick="updateWhat()"> Dry Needling Therapy</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Pelvic Health Treatment" onclick="updateWhat()"> Pelvic Health Treatment</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Sports Massage" onclick="updateWhat()"> Sports Massage</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Bike Fit" onclick="updateWhat()"> Bike Fit</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectService" value="Ultrasound Guided Injection" onclick="updateWhat()"> Ultrasound Guided Injection</label><br>
                         </p>
                       </form>
                   </div>
@@ -265,9 +286,9 @@
                       <form class="" action="#">
                         <p>Please select your preferred expert.</p>
                         <p>
-                          <label><input type="radio" name="selectExpert" value="Mike"> Mike</label><br>
-                          <label><input type="radio" name="selectExpert" value="Alice"> Alice</label><br>
-                          <label><input type="radio" name="selectExpert" value="Bob"> Bob</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectExpert" value="Mike" onclick="updateWhom()"> Mike</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectExpert" value="Alice" onclick="updateWhom()"> Alice</label><br>
+                          <label class="radioLabel"><input type="radio" name="selectExpert" value="Bob" onclick="updateWhom()"> Bob</label><br>
                         </p>
                       </form>
                   </div>
@@ -285,7 +306,7 @@
                       <div class="form-group row">
                         <label for="selectClinic" class="col-2 col-form-label">Clinic</label>
                           <div class="col-10">
-                            <select class="form-control" id="selectClinic">
+                            <select class="form-control" id="selectClinic" onchange="updateWhere()">
                               <option value="Southern Ottawa" selected="selected">Southern Ottawa</option>
                               <option value="Rideau">Rideau</option>
                             </select>
@@ -300,13 +321,31 @@
               </div>
               <div id="collapseDate" class="collapse" data-parent="#accordion">
                   <div class="card-body">
-                      <p>Tell us the date and time.</p>
+                      <p>Tell us the date and time. Note that our clinics open from 9:00 to 17:00 on weekdays only.</p>
                       <!-- Bootstrap has various input components. Some examples are given here: -->
                       <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
                       <div class="form-group row">
-                          <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                          <label for="dateInput" class="col-2 col-form-label">Date</label>
                           <div class="col-10">
-                              <input class="form-control" type="datetime-local" id="dateTimeInput">
+                              <input class="form-control" type="text" id="dateInput">
+                          </div>
+                          <label for="timeInput" class="col-2 col-form-label">Time</label>
+                          <div class="col-10">
+                            <select class="form-control" id="timeInput" onchange="updateTime()">
+                              <option value="9:00" selected="selected">9:00</option>
+                              <option value="9:30">9:30</option>
+                              <option value="10:00">10:00</option>
+                              <option value="10:30">10:30</option>
+                              <option value="11:00">11:00</option>
+                              <option value="11:30">11:30</option>
+                              <option value="14:00">14:00</option>
+                              <option value="14:30">14:30</option>
+                              <option value="15:00">15:00</option>
+                              <option value="15:30">15:30</option>
+                              <option value="16:00">16:00</option>
+                              <option value="16:30">16:30</option>
+
+                            </select>
                           </div>
                       </div>
                   </div>
@@ -325,7 +364,7 @@
                             <label>Name: <input class="form-control" type="text" name="name" placeholder="enter your name"></label>
                           </p>
                           <p>
-                            <label>Phone number: <input class="form-control" type="text" name="phonenumber" placeholder="(XXX) XXX-XXXX"></label>
+                            <label>Phone number: <input class="form-control" type="text" name="phonenumber" placeholder="(XXX) XXX-XXXX" id = "phone"></label>
                           </p>
                           <p>
                             <label>E-mail: <input class="form-control" type="email" name="email" placeholder="enter your e-mail address" size="30"></label>
@@ -342,12 +381,12 @@
               <div id="collapsePayment" class="collapse" data-parent="#accordion">
                   <div class="card-body">
                       <div class="form-group">
-                        <p>Please enter below your payment information.<img src="images/icons8-ask-question-50.png" alt="Payment icon" style="height: 35px; width: 35px; position: relative; right: -10px"  id="debit" title="We ask for your credit card information in case of no-show, $20 will be charged."></p>
+                        <p>Please enter below your payment information.<img src="images/icons8-ask-question-50.png" alt="Payment icon" style="height: 35px; width: 35px; position: relative; right: -10px" id="debit" title="We ask for your credit card information in case of no-show, $20 will be charged."></p>
                         <form class="" action="#">
                           <p>Credit Card<img src="images/icons8-visa-50.png" alt="Payment icon" style="height: 30px; width: 30px; position: relative; right: -5px; top: -2px"><img src="images/icons8-mastercard-50.png" alt="Payment icon" style="height: 30px; width: 30px; position: relative; right: -10px; top: -2px"></p>
                     			<input type="text" name="cardholdername" placeholder="Cardholder's Name">
-                          <input type="text" name="cardnumber" placeholder="Card Number">
-                          <input type="text" name="cvv" placeholder="CVV">
+                          <input type="text" name="cardnumber" placeholder="Card Number" id = "card">
+                          <input type="text" name="cvv" placeholder="CVV" id = "cvv">
                     			<input type="month" name="validuntil">
                         </form>
                       </div>
@@ -357,7 +396,7 @@
       </div>
       <br>
       <div class="submit-button">
-        <button type="button" name="button" class="btn btn-primary btn-block">SUBMIT BOOKING INFO</button>
+        <button type="button" id="submitButton" name="button" class="btn btn-primary btn-block">SUBMIT BOOKING INFO</button>
       </div>
     </div>
 

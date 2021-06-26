@@ -34,21 +34,26 @@ div {
   border-radius: 20px;
 }
 
-.tableH4 {
+/* .tableH4 {
   font-family: Times;
   text-align: center;
   color: gray;
-}
+} */
 
 body {
   position: relative;
   top: 80px;
 }
 
-input:hover {
+input:hover, select:hover {
   background-color: rgba(240,240,240,0.7);
 }
 
 .card-header:hover {
   background-color: rgb(240,240,240);
+}
+
+.radioLabel:hover, td:hover {
+  text-decoration: underline;
+  font-style: italic;
 }

@@ -9,7 +9,29 @@ function validatePhone(txtPhone) {
     var a = document.getElementById(txtPhone).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^(\([-+]?[0-9]+)\)$/;
+    var filter = /^(\([-+]?[0-9]{3})\)(\s)*[0-9]{3}-{1}[0-9]{4}$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validateCard(txtCard) {
+    var a = document.getElementById(txtCard).value;
+    var filter = /^([0-9]{4}-){3}[0-9]{4}$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validateCvv(txtCvv) {
+    var a = document.getElementById(txtCvv).value;
+    var filter = /^[0-9]{3}$/;
     if (filter.test(a)) {
         return true;
     }
@@ -23,16 +45,42 @@ function validatePhone(txtPhone) {
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
+var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020","06/30/2021"];
 const setDateFormat = "mm/dd/yy";
 
 function disableDates(date) {
     // Sunday is Day 0, disable all Sundays
-    if (date.getDay() === 0)
+    // if (date.getDay() === 0)
+    //     return [false];
+    // var string = jQuery.datepicker.formatDate(setDateFormat, date);
+    // return [ unavailableDates.indexOf(string) === -1 ]
+
+    if (date.getDay() === 6 || date.getDay() === 0) {
+      return [false];
+    }
+
+    if (whom == "Mike") {
+      if (date.getDay() === 3) {
         return [false];
-    var string = jQuery.datepicker.formatDate(setDateFormat, date);
-    return [ unavailableDates.indexOf(string) === -1 ]
-}
+      } else {
+        return [true];
+      }
+    } else if (whom == "Alice") {
+      if (date.getDay() === 2) {
+        return [false];
+      } else {
+        return [true];
+      }
+    } else if (whom == "Bob") {
+      if (date.getDay() === 1 || date.getDay() === 5) {
+        return [false];
+      } else {
+        return [true];
+      }
+    } else {
+      return [true];
+    }
+ }
 
 
 // HERE, JQuery "LISTENING" starts
@@ -44,12 +92,34 @@ $(document).ready(function(){
     // The "error" class in style.css defines yellow background and red foreground
     $("#phone").on("change", function(){
         if (!validatePhone("phone")){
-            alert("Wrong format for phone");
+            alert("Wrong format for phone! \nYou should enter (xxx) xxx-xxxx");
             $("#phone").val("(xxx) xxx-xxxx");
             $("#phone").addClass("error");
         }
         else {
             $("#phone").removeClass("error");
+        }
+    });
+
+    $("#card").on("change", function(){
+        if (!validateCard("card")){
+            alert("Wrong format for credit card number! \nYou should enter xxxx-xxxx-xxxx-xxxx");
+            $("#card").val("xxxx-xxxx-xxxx-xxxx");
+            $("#card").addClass("error");
+        }
+        else {
+            $("#card").removeClass("error");
+        }
+    });
+
+    $("#cvv").on("change", function(){
+        if (!validateCvv("cvv")){
+            alert("Wrong format for CVV! \nYou should enter 3 digits");
+            $("#cvv").val("xxx");
+            $("#cvv").addClass("error");
+        }
+        else {
+            $("#cvv").removeClass("error");
         }
     });
 
@@ -63,11 +133,10 @@ $(document).ready(function(){
     $( "#dateInput" ).datepicker(
         {
             dateFormat: setDateFormat,
-            // no calendar before June 1rst 2020
-            minDate: new Date('06/01/2020'),
+            minDate: "+1D",
             maxDate: '+4M',
             // used to disable some dates
-            beforeShowDay: $.datepicker.noWeekends,
+            // beforeShowDay: $.datepicker.noWeekends,
             beforeShowDay: disableDates
         }
     );
