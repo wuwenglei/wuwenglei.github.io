@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  background-color: rgb(255, 255, 248);
+}
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 6000px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: white;
+}
+.navbar h1 {
+  color: #fa9600;
+}
+.navbar h2 {
+  color: #fa9600;
+  position: relative;
+  bottom: -15px;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #ffbb00;
+}
+.content {
+  max-width: 6000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* blog previews / list */
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
+}
+.blog-preview a{
+  text-decoration: none;
+}
+
+/* blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 20px 0;
+}
+.blog-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* create new blog form */
+.home {
+  max-width: 4000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.home label {
+  text-align: left;
+  display: block;
+}
+.home input {
+  width: 90%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
+  position: relative;
+  right: -7%;
+}
+.home label {
+  position: relative;
+  bottom: -38px;
+  right: -20px;
+}
+.search h4 {
+  color: #fa9600;
+  position: relative;
+  bottom: -10px;
+}
+button {
+  background: #ffbb00;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 125%;
+}
+
+h2 {
+  font-size: 30px;
+  color: #ffc400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 25px;
+  color: #fa9600;
+}
+
+.flight-info {
+  text-align: center;
+  font-size: 150%;
+  border: 5px solid #ffc400;
+  background-color: #fff7df;
+  border-radius: 10px;
+}
+
+.airplane img {
+  width: 25px;
+  height: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  bottom: 1%;
+}
+
+.next-button {
+  position: absolute;
+  right: 20px;
+  bottom: 1%;
+}
+
+.confirm-button {
+  position: absolute;
+  right: 20px;
+  bottom: 1%;
+  background-color: green;
+}
+
+.search, .seatPreferenceForm, .additionalServicesSelect, .paymentForm, .travelInfoAccordion, .aboutUsAccordion, .frequentqaas {
+  border: 5px solid #ffc400;
+  text-align: center;
+  background-color: #fff7df;
+  border-radius: 5px;
+}
+
+.hoverChange:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.steps {
+  text-align: center;
+}
+
+.step-div {
+  display: inline-block;
+  width: 150px;
+}
+
+.step-picture {
+  width: 50px;
+  height: 50px;
+}
+
+.step-arrow {
+  position: relative;
+  top: -10px;
+}
+
+#searchDestination {
+  width: 87%;
+  font-size: 130%;
+}
+
+#searchDestinationButton {
+  position: relative;
+  right: -3%;
+  width: 8%;
+}
+
+video {
+  border-radius: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
+  font-size: 125%;
+}
+
+#messageInput {
+  width: 85%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
+  font-size: 125%;
+}
+
+#messageSend {
+  position: absolute;
+  right: 3%;
+  bottom: 6%;
+}
+
+#feedbackButton {
+  position: absolute;
+  bottom: 40%;
+  left: 30%;
+}
+
+#onlineChatButton {
+  position: absolute;
+  bottom: 40%;
+  right: 32%;
+}
+
+#logo {
+  width: 60px;
+  height: 40px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+}
+
+.paymentForm input {
+  width: 90%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  right: -5%;
+}
+
+#searchError, #noCabinError {
+  font-weight: bold;
+  color: #f1356d;
+}
+
+#helpButton {
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+}
+
+.help {
+  text-align: center;
+}
+
+.help p {
+  font-size: 125%;
+}
+
+.help img {
+  width: 800px;
+  height: 500px;
+}
+
+#help-back-button-top {
+  position: relative;
+  left: -48%;
+}
+
+#help-back-button-bottom {
+  position: absolute;
+  left: 20px;
+}
+
+#helpNote {
+  font-style: italic;
+  text-decoration: underline;
+  color: gray;
+}
+
+.links a {
+  color: black;
+}
+
+.navbarIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.searchIcon {
+  width: 25px;
+  height: 25px;
+}
+
+#languageSelectionDiv {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+}
