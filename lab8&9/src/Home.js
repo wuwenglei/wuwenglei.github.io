@@ -52,7 +52,7 @@ const Home = () => {
             <option value="Vancouver">Vancouver</option>
           </datalist></p>
           <p><label><img src={calendarSrc} alt="Calendar icon." className="searchIcon" /> Date: </label>
-          <input type="date" value={departureDate} onChange={(e) => setDepartureDate(e.target.value)} placeholder="YY/MM/DD" required/></p>
+          <input type="date" value={departureDate} onChange={(e) => setDepartureDate(e.target.value)} placeholder="YYYY/MM/DD" required/></p>
           <p id="searchError"></p>
           <p><OverlayTrigger placement="right" delay={{ show: 50, hide: 50 }} overlay={renderTooltip}>
             <button><Link to={{
