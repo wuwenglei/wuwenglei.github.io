@@ -1,0 +1,87 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- inform
+- subscribe
+- thank
+- goodbye
+- unsubscribe
+- reason_unsubscribe
+slots:
+  email:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+   utter_greet:
+       - text: |
+           Hello! How can I help you?
+       - text: |
+           Hi!
+   utter_ask_email:
+       - text: |
+           What is your email address?
+   utter_subscribed:
+       - text: |
+           Check your inbox at {email} in order to finish subscribing to the newsletter!
+       - text: |
+           You're all set! Check your inbox at {email} to confirm your subscription.
+   utter_reply_thank:
+       - text: |
+           Glad I could help!
+       - text: |
+           You're welcome!
+       - text: |
+           My pleasure!
+       - text: |
+           It's happy to know you are satisfied with my service!
+       - text: |
+           Not at all!
+   utter_goodbye:
+       - text: |
+           Bye!
+       - text: |
+           Good bye!
+       - text: |
+           See you!
+       - text: |
+           Bye-bye!
+       - text: |
+           Have a good day!
+       - text: |
+           Enjoy your day!
+   utter_why_unsubscribe:
+       - text: |
+           Could you tell us why you would like to unsubscribe?
+       - text: |
+           It's sad to know you don't need us anymore. Could you share with us your reason?
+       - text: |
+           Are you unsatisfied? Could you tell us the reason?
+       - text: |
+           Before we stop sending you the newsletter, please share with us the reason for your unsubscription.
+   utter_unsubscribed:
+       - text: |
+           Ok, we understand.
+       - text: |
+           No problem.
+       - text: |
+           Fine.
+       - text: |
+           You are now unsubscribed.
+       - text: |
+           Ok. You are welcomed to subscribe our newsletter again at any time!
+actions:
+- '...'
+- utter_greet
+- utter_subscribed
+- utter_reply_thank
+- utter_goodbye
+- utter_why_unsubscribe
+- utter_unsubscribed
+forms:
+  newsletter_form:
+    required_slots:
+      email:
+      - type: from_text
